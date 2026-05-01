@@ -142,15 +142,21 @@ window.onload = () => {
     document.getElementById("menuBtn").onclick = openMenu;
     document.querySelector(".close").onclick = closeMenu;
 
-    // Dark Mode Toggle
+    // Dark Mode — restore saved preference
     const themeBtn = document.getElementById("themeToggle");
+    const icon = themeBtn.querySelector("i");
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+        icon.classList.replace("fa-moon", "fa-sun");
+    }
     themeBtn.onclick = () => {
         document.body.classList.toggle("dark");
-        const icon = themeBtn.querySelector("i");
-        if(document.body.classList.contains("dark")) {
+        if (document.body.classList.contains("dark")) {
             icon.classList.replace("fa-moon", "fa-sun");
+            localStorage.setItem("theme", "dark");
         } else {
             icon.classList.replace("fa-sun", "fa-moon");
+            localStorage.setItem("theme", "light");
         }
     };
 
