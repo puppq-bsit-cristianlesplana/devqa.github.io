@@ -639,6 +639,55 @@ footer p { font-size: 0.85rem; }
 /* Project card cursor */
 .project-card, .achievement-item { cursor: pointer; }
 
+/* ── Section Preview Modal ── */
+.section-preview-modal {
+    display: none;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 3000; align-items: center; justify-content: center;
+}
+.section-preview-modal.show { display: flex; }
+
+.section-preview-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.section-preview-box {
+    position: relative; z-index: 1;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    width: 90%; max-width: 520px;
+    max-height: 80vh; overflow-y: auto;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.section-preview-close {
+    position: absolute; top: 14px; right: 18px;
+    background: none; border: none; font-size: 1.6rem;
+    cursor: pointer; color: var(--text); opacity: 0.6; line-height: 1;
+}
+.section-preview-close:hover { opacity: 1; }
+
+.section-preview-title {
+    margin: 0 0 16px; font-size: 1.2rem; color: var(--accent);
+}
+
+.section-preview-content { margin-bottom: 20px; }
+
+.section-preview-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--accent); color: #fff; text-decoration: none;
+    padding: 12px 20px; border-radius: 8px; font-weight: bold;
+    font-size: 0.95rem; transition: opacity 0.2s;
+}
+.section-preview-btn:hover { opacity: 0.85; }
+
+.preview-item { cursor: pointer; }
+
 /* ── Image Lightbox Modal ── */
 #imgModal {
     display: none;

@@ -108,6 +108,29 @@ function closeDetailModal() {
     document.getElementById('detailModal').classList.remove('show');
 }
 
+// --- Section Preview Modal ---
+const SECTION_CONFIG = {
+    projects: { title: 'Projects',  icon: 'fa-code',     href: 'projects.html', btn: 'Go to Projects Page' },
+    about:    { title: 'About Me',  icon: 'fa-user',     href: 'about.html',    btn: 'Go to About Me Page' },
+    contact:  { title: 'Contact',   icon: 'fa-envelope', href: 'contact.html',  btn: 'Go to Contact Page'  },
+};
+
+function openSectionPreview(section) {
+    const cfg = SECTION_CONFIG[section];
+    const sourceEl = document.querySelector(`.home-preview-${section}`);
+    if (!cfg || !sourceEl) return;
+
+    document.getElementById('sectionPreviewTitle').innerHTML = `<i class="fa ${cfg.icon}"></i> ${cfg.title}`;
+    document.getElementById('sectionPreviewContent').innerHTML = sourceEl.outerHTML;
+    document.getElementById('sectionPreviewLink').href = cfg.href;
+    document.getElementById('sectionPreviewBtnText').textContent = cfg.btn;
+    document.getElementById('sectionPreviewModal').classList.add('show');
+}
+
+function closeSectionPreview() {
+    document.getElementById('sectionPreviewModal').classList.remove('show');
+}
+
 // --- Image Lightbox ---
 function openImgModal(src, caption) {
     document.getElementById('imgModalSrc').src = src;
