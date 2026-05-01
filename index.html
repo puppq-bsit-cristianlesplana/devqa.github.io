@@ -12,7 +12,7 @@
 
     <header>
         <div class="nav-container">
-            <h1 class="logo" onclick="showPage('home')" ><img src="LOGO.png" alt="logo" class="logo-icon">CRISTIAN</h1>
+            <h1 class="logo" onclick="location.href='index.html'"><img src="LOGO.png" alt="logo" class="logo-icon">CRISTIAN</h1>
             <div class="header-right">
                 <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
                     <i class="fa fa-moon"></i>
@@ -30,17 +30,17 @@
             <span class="close">&times;</span>
             <nav>
                 <ul class="menu-list">
-                    <li><a href="javascript:void(0)" onclick="showPage('home')">HOME</a></li>
-                    <li><a href="javascript:void(0)" onclick="showPage('projects')">PROJECTS</a></li>
-                    <li><a href="javascript:void(0)" onclick="showPage('about')">ABOUT ME</a></li>
-                    <li><a href="javascript:void(0)" onclick="showPage('contact')">CONTACT US</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li><a href="about.html">ABOUT ME</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
     <main class="mobile-container">
-        <section id="home" class="page">
+        <section id="home" class="page active">
             <div class="hero-header">
                 <h1>Welcome</h1>
                 <p>Hello, I'm <strong>Cristian Esplana</strong>. College Student, Freelance QA Analyst & Aspiring Web Developer.</p>
@@ -48,7 +48,7 @@
             <div class="scroll-preview">
 
                 <!-- Projects Preview -->
-                <div class="preview-item" onclick="showPage('projects')">
+                <div class="preview-item" onclick="location.href='projects.html'">
                     <h4><i class="fa fa-code"></i> Projects</h4>
                     <p class="preview-sub">Click to view all projects</p>
                     <div class="home-preview-projects">
@@ -84,7 +84,7 @@
                 </div>
 
                 <!-- About Me Preview -->
-                <div class="preview-item" onclick="showPage('about')">
+                <div class="preview-item" onclick="location.href='about.html'">
                     <h4><i class="fa fa-user"></i> About Me</h4>
                     <p class="preview-sub">Click to view full profile</p>
                     <div class="home-preview-about">
@@ -107,7 +107,7 @@
                 </div>
 
                 <!-- Contact Preview -->
-                <div class="preview-item" onclick="showPage('contact')">
+                <div class="preview-item" onclick="location.href='contact.html'">
                     <h4><i class="fa fa-envelope"></i> Contact</h4>
                     <p class="preview-sub">Click to send a message</p>
                     <div class="home-preview-contact">
@@ -116,7 +116,7 @@
                             <div class="hp-detail-row"><i class="fa fa-envelope"></i> cristian.e@email.com</div>
                             <div class="hp-detail-row"><i class="fa fa-map-marker-alt"></i> Manila, Philippines</div>
                         </div>
-                        <form class="hp-form" onsubmit="event.preventDefault(); showPage('contact');">
+                        <form class="hp-form" onsubmit="event.preventDefault(); location.href='contact.html';">
                             <input type="email" placeholder="Your email..." disabled>
                             <textarea rows="2" placeholder="Your message..." disabled></textarea>
                             <button type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
@@ -124,201 +124,6 @@
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <section id="projects" class="page">
-            <h2>Past Semester Projects</h2>
-
-            <div class="year-group">
-                <div class="year-label"><i class="fa fa-calendar-alt"></i> 1st Year</div>
-                <div class="grid-layout">
-                    <div class="card project-card" data-project-id="polycal1">
-                        <div class="project-meta">
-                            <span class="subject-tag">Comprog 1</span>
-                            <span class="platform-tag"><i class="fa fa-desktop"></i> Desktop</span>
-                        </div>
-                        <h3><i class="fa fa-calendar-check"></i> POLYCAL v1</h3>
-                        <p>A student calendar desktop app for Polytechnic students to manage schedules, deadlines, and subjects — built with <strong>Python (Tkinter)</strong>.</p>
-                        <div class="tech-stack">
-                            <span class="tech">Python</span>
-                            <span class="tech">Tkinter</span>
-                        </div>
-                        <img class="card-thumb" src="473167842_1277725740165776_4760458389630140038_n.png" alt="POLYCAL v1 Screenshot">
-                    </div>
-                    <div class="card project-card" data-project-id="polycal2">
-                        <div class="project-meta">
-                            <span class="subject-tag">Comprog 2</span>
-                            <span class="platform-tag"><i class="fa fa-mobile-alt"></i> Mobile</span>
-                        </div>
-                        <h3><i class="fa fa-calendar-check"></i> POLYCAL v2</h3>
-                        <p>Mobile version of POLYCAL redesigned for Android using <strong>Python (Kivy)</strong>, featuring a touch-friendly UI for on-the-go scheduling.</p>
-                        <div class="tech-stack">
-                            <span class="tech">Python</span>
-                            <span class="tech">Kivy</span>
-                        </div>
-                        <img class="card-thumb" src="https://picsum.photos/seed/polycal2/700/450" alt="POLYCAL v2 Screenshot">
-                    </div>
-                </div>
-            </div>
-
-            <div class="year-group">
-                <div class="year-label"><i class="fa fa-calendar-alt"></i> 2nd Year</div>
-                <div class="grid-layout">
-                    <div class="card project-card" data-project-id="tictactoe">
-                        <div class="project-meta">
-                            <span class="subject-tag">Comprog 3</span>
-                            <span class="platform-tag"><i class="fa fa-users"></i> Group</span>
-                        </div>
-                        <h3><i class="fa fa-gamepad"></i> Tic-Tac-Toe</h3>
-                        <p>A console-based two-player Tic-Tac-Toe game developed as a group project, applying object-oriented programming concepts in <strong>C++</strong>.</p>
-                        <div class="tech-stack">
-                            <span class="tech">C++</span>
-                            <span class="tech">OOP</span>
-                        </div>
-                        <img class="card-thumb" src="https://picsum.photos/seed/tictac77/700/450" alt="Tic-Tac-Toe Screenshot">
-                    </div>
-                    <div class="card project-card" data-project-id="linking">
-                        <div class="project-meta">
-                            <span class="subject-tag">Data Structures & Algorithms</span>
-                            <span class="platform-tag"><i class="fa fa-users"></i> Group</span>
-                        </div>
-                        <h3><i class="fa fa-project-diagram"></i> Linking Function</h3>
-                        <p>A group project demonstrating linked data structures and function chaining using <strong>Python</strong>, applying DSA concepts in a practical system.</p>
-                        <div class="tech-stack">
-                            <span class="tech">Python</span>
-                            <span class="tech">DSA</span>
-                        </div>
-                        <img class="card-thumb" src="https://picsum.photos/seed/datalink/700/450" alt="Linking Function Screenshot">
-                    </div>
-                    <div class="card project-card" data-project-id="bookinventory">
-                        <div class="project-meta">
-                            <span class="subject-tag">Free Elective</span>
-                            <span class="platform-tag"><i class="fa fa-user"></i> Solo</span>
-                        </div>
-                        <h3><i class="fa fa-book"></i> Book Inventory CRUD</h3>
-                        <p>A solo CRUD application for managing a book inventory system — built with <strong>Java</strong>, covering create, read, update, and delete operations.</p>
-                        <div class="tech-stack">
-                            <span class="tech">Java</span>
-                            <span class="tech">CRUD</span>
-                        </div>
-                        <img class="card-thumb" src="https://picsum.photos/seed/bookstore/700/450" alt="Book Inventory Screenshot">
-                    </div>
-                </div>
-            </div>
-
-            <h2 class="section-sub-heading">Achievements</h2>
-            <div class="achievements-list">
-                <div class="achievement-item" data-achievement-id="cert1">
-                    <div class="achievement-icon"><i class="fa fa-certificate"></i></div>
-                    <div class="achievement-body">
-                        <strong>Programming Session Certificate</strong>
-                        <p>Attended a programming workshop/session and earned a certificate of participation, reinforcing skills in software development practices.</p>
-                    </div>
-                    <img class="cert-thumb" src="https://picsum.photos/seed/cert1/400/280" alt="Certificate">
-                </div>
-                <div class="achievement-item" data-achievement-id="cert2">
-                    <div class="achievement-icon"><i class="fa fa-trophy"></i></div>
-                    <div class="achievement-body">
-                        <strong>POLYCAL — Dual-Platform Release</strong>
-                        <p>Successfully delivered the same project across two platforms (Desktop & Mobile) across consecutive semesters using different Python frameworks.</p>
-                    </div>
-                    <img class="cert-thumb" src="https://picsum.photos/seed/cert2/400/280" alt="Certificate">
-                </div>
-                <div class="achievement-item" data-achievement-id="cert3">
-                    <div class="achievement-icon"><i class="fa fa-code-branch"></i></div>
-                    <div class="achievement-body">
-                        <strong>Multi-Language Developer</strong>
-                        <p>Completed academic projects across Python, C++, and Java — demonstrating versatility in multiple programming languages within two years.</p>
-                    </div>
-                    <img class="cert-thumb" src="https://picsum.photos/seed/cert3/400/280" alt="Certificate">
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="page">
-            <h2>Personal Details</h2>
-            <div class="grid-layout">
-                <div class="card" id="aboutCard">
-                    <div class="profile-header">
-                        <i class="fa fa-user-circle"></i>
-                        <div class="profile-title">
-                            <h3>Cristian Esplana</h3>
-                            <p>2nd Year BSIT Student</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="about-details">
-                        <p><strong>Status:</strong> <span>Working Student</span></p>
-                        <p><strong>Current Role:</strong> <span>Freelance QA Analyst</span></p>
-                        <p><strong>Specialization:</strong> <span>Quality Assurance & Web Dev</span></p>
-                        <p><strong>Career Goal:</strong> <span>Senior QA Automation Engineer</span></p>
-                    </div>
-                </div>
-
-                <div class="card hobby-section">
-                    <h3><i class="fa fa-camera"></i> Photography</h3>
-                    <p>Outside of coding and testing, I capture stories through my lens, focusing on nature and urban landscapes.</p>
-                    <div id="hobbyGallery" class="hobby-gallery">
-                        <div class="gallery-item">
-                            <img src="https://picsum.photos/seed/forest/400/260" alt="Forest Trail" onclick="openImgModal('https://picsum.photos/seed/forest/900/600','Forest Trail — Morning light filtering through the trees during a hike in the highlands.')">
-                            <div class="gallery-caption">
-                                <strong>Forest Trail</strong>
-                                <span>Morning light filtering through the trees during a hike in the highlands.</span>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://picsum.photos/seed/citynight/400/260" alt="City at Night" onclick="openImgModal('https://picsum.photos/seed/citynight/900/600','City at Night — Long-exposure shot of Manila\'s busy streets after sunset.')">
-                            <div class="gallery-caption">
-                                <strong>City at Night</strong>
-                                <span>Long-exposure shot of Manila's busy streets after sunset.</span>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://picsum.photos/seed/ocean22/400/260" alt="Coastal Horizon" onclick="openImgModal('https://picsum.photos/seed/ocean22/900/600','Coastal Horizon — Golden hour at a quiet beach in Batangas, Philippines.')">
-                            <div class="gallery-caption">
-                                <strong>Coastal Horizon</strong>
-                                <span>Golden hour at a quiet beach in Batangas, Philippines.</span>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://picsum.photos/seed/rooftop7/400/260" alt="Rooftop View" onclick="openImgModal('https://picsum.photos/seed/rooftop7/900/600','Rooftop View — Urban skyline captured from a rooftop during the blue hour.')">
-                            <div class="gallery-caption">
-                                <strong>Rooftop View</strong>
-                                <span>Urban skyline captured from a rooftop during the blue hour.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="page">
-            <h2>CONTACT US </h2>
-            <div class="contact-grid">
-                <div class="card contact-info-card">
-                    <h3>Get in Touch</h3>
-                    <p><i class="fa fa-phone"></i> +63 900 000 0000</p>
-                    <p><i class="fa fa-envelope"></i> cristian.e@email.com</p>
-                    <p><i class="fa fa-map-marker-alt"></i> Manila, Philippines</p>
-                </div>
-
-                <div class="card contact-form-card">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="email@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" placeholder="How can I help you?" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="send-btn">
-                            <span>Send Message</span>
-                            <i class="fa fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
             </div>
         </section>
     </main>
@@ -331,20 +136,6 @@
         </div>
         <p>&copy; 2026 Cristian Esplana. All rights reserved.</p>
     </footer>
-
-    <!-- Detail Modal -->
-    <div id="detailModal" class="detail-modal">
-        <div class="detail-modal-overlay" onclick="closeDetailModal()"></div>
-        <div class="detail-modal-box">
-            <button class="detail-modal-close" onclick="closeDetailModal()">&times;</button>
-            <div class="detail-modal-meta" id="detailMeta"></div>
-            <h2 class="detail-modal-title" id="detailTitle"></h2>
-            <hr class="detail-modal-hr">
-            <img class="detail-modal-img" id="detailImg" src="" alt="">
-            <p class="detail-modal-desc" id="detailDesc"></p>
-            <div class="detail-modal-tech tech-stack" id="detailTech"></div>
-        </div>
-    </div>
 
     <!-- Image Lightbox Modal -->
     <div id="imgModal">

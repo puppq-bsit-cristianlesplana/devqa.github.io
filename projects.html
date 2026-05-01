@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Cristian Esplana</title>
+    <link rel="icon" type="image/png" href="DEVQA FAV.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <h1 class="logo" onclick="location.href='index.html'"><img src="LOGO.png" alt="logo" class="logo-icon">CRISTIAN</h1>
+            <div class="header-right">
+                <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
+                    <i class="fa fa-moon"></i>
+                </button>
+                <div class="search-box">
+                    <input type="text" id="siteSearch" placeholder="Search...">
+                </div>
+                <button id="menuBtn" class="menu-trigger">MENU ☰</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="navModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <nav>
+                <ul class="menu-list">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li><a href="about.html">ABOUT ME</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="mobile-container">
+        <section id="projects" class="page active">
+            <h2>Past Semester Projects</h2>
+
+            <div class="year-group">
+                <div class="year-label"><i class="fa fa-calendar-alt"></i> 1st Year</div>
+                <div class="grid-layout">
+                    <div class="card project-card" data-project-id="polycal1">
+                        <div class="project-meta">
+                            <span class="subject-tag">Comprog 1</span>
+                            <span class="platform-tag"><i class="fa fa-desktop"></i> Desktop</span>
+                        </div>
+                        <h3><i class="fa fa-calendar-check"></i> POLYCAL v1</h3>
+                        <p>A student calendar desktop app for Polytechnic students to manage schedules, deadlines, and subjects — built with <strong>Python (Tkinter)</strong>.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">Tkinter</span>
+                        </div>
+                        <img class="card-thumb" src="473167842_1277725740165776_4760458389630140038_n.png" alt="POLYCAL v1 Screenshot">
+                    </div>
+                    <div class="card project-card" data-project-id="polycal2">
+                        <div class="project-meta">
+                            <span class="subject-tag">Comprog 2</span>
+                            <span class="platform-tag"><i class="fa fa-mobile-alt"></i> Mobile</span>
+                        </div>
+                        <h3><i class="fa fa-calendar-check"></i> POLYCAL v2</h3>
+                        <p>Mobile version of POLYCAL redesigned for Android using <strong>Python (Kivy)</strong>, featuring a touch-friendly UI for on-the-go scheduling.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">Kivy</span>
+                        </div>
+                        <img class="card-thumb" src="https://picsum.photos/seed/polycal2/700/450" alt="POLYCAL v2 Screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-group">
+                <div class="year-label"><i class="fa fa-calendar-alt"></i> 2nd Year</div>
+                <div class="grid-layout">
+                    <div class="card project-card" data-project-id="tictactoe">
+                        <div class="project-meta">
+                            <span class="subject-tag">Comprog 3</span>
+                            <span class="platform-tag"><i class="fa fa-users"></i> Group</span>
+                        </div>
+                        <h3><i class="fa fa-gamepad"></i> Tic-Tac-Toe</h3>
+                        <p>A console-based two-player Tic-Tac-Toe game developed as a group project, applying object-oriented programming concepts in <strong>C++</strong>.</p>
+                        <div class="tech-stack">
+                            <span class="tech">C++</span>
+                            <span class="tech">OOP</span>
+                        </div>
+                        <img class="card-thumb" src="https://picsum.photos/seed/tictac77/700/450" alt="Tic-Tac-Toe Screenshot">
+                    </div>
+                    <div class="card project-card" data-project-id="linking">
+                        <div class="project-meta">
+                            <span class="subject-tag">Data Structures & Algorithms</span>
+                            <span class="platform-tag"><i class="fa fa-users"></i> Group</span>
+                        </div>
+                        <h3><i class="fa fa-project-diagram"></i> Linking Function</h3>
+                        <p>A group project demonstrating linked data structures and function chaining using <strong>Python</strong>, applying DSA concepts in a practical system.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">DSA</span>
+                        </div>
+                        <img class="card-thumb" src="https://picsum.photos/seed/datalink/700/450" alt="Linking Function Screenshot">
+                    </div>
+                    <div class="card project-card" data-project-id="bookinventory">
+                        <div class="project-meta">
+                            <span class="subject-tag">Free Elective</span>
+                            <span class="platform-tag"><i class="fa fa-user"></i> Solo</span>
+                        </div>
+                        <h3><i class="fa fa-book"></i> Book Inventory CRUD</h3>
+                        <p>A solo CRUD application for managing a book inventory system — built with <strong>Java</strong>, covering create, read, update, and delete operations.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Java</span>
+                            <span class="tech">CRUD</span>
+                        </div>
+                        <img class="card-thumb" src="https://picsum.photos/seed/bookstore/700/450" alt="Book Inventory Screenshot">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-sub-heading">Achievements</h2>
+            <div class="achievements-list">
+                <div class="achievement-item" data-achievement-id="cert1">
+                    <div class="achievement-icon"><i class="fa fa-certificate"></i></div>
+                    <div class="achievement-body">
+                        <strong>Programming Session Certificate</strong>
+                        <p>Attended a programming workshop/session and earned a certificate of participation, reinforcing skills in software development practices.</p>
+                    </div>
+                    <img class="cert-thumb" src="https://picsum.photos/seed/cert1/400/280" alt="Certificate">
+                </div>
+                <div class="achievement-item" data-achievement-id="cert2">
+                    <div class="achievement-icon"><i class="fa fa-trophy"></i></div>
+                    <div class="achievement-body">
+                        <strong>POLYCAL — Dual-Platform Release</strong>
+                        <p>Successfully delivered the same project across two platforms (Desktop & Mobile) across consecutive semesters using different Python frameworks.</p>
+                    </div>
+                    <img class="cert-thumb" src="https://picsum.photos/seed/cert2/400/280" alt="Certificate">
+                </div>
+                <div class="achievement-item" data-achievement-id="cert3">
+                    <div class="achievement-icon"><i class="fa fa-code-branch"></i></div>
+                    <div class="achievement-body">
+                        <strong>Multi-Language Developer</strong>
+                        <p>Completed academic projects across Python, C++, and Java — demonstrating versatility in multiple programming languages within two years.</p>
+                    </div>
+                    <img class="cert-thumb" src="https://picsum.photos/seed/cert3/400/280" alt="Certificate">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2026 Cristian Esplana. All rights reserved.</p>
+    </footer>
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="detail-modal">
+        <div class="detail-modal-overlay" onclick="closeDetailModal()"></div>
+        <div class="detail-modal-box">
+            <button class="detail-modal-close" onclick="closeDetailModal()">&times;</button>
+            <div class="detail-modal-meta" id="detailMeta"></div>
+            <h2 class="detail-modal-title" id="detailTitle"></h2>
+            <hr class="detail-modal-hr">
+            <img class="detail-modal-img" id="detailImg" src="" alt="">
+            <p class="detail-modal-desc" id="detailDesc"></p>
+            <div class="detail-modal-tech tech-stack" id="detailTech"></div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imgModal">
+        <div class="img-modal-overlay" onclick="closeImgModal()"></div>
+        <div class="img-modal-box">
+            <button class="img-modal-close" onclick="closeImgModal()">&times;</button>
+            <img id="imgModalSrc" src="" alt="">
+            <p class="img-modal-caption" id="imgModalCaption"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

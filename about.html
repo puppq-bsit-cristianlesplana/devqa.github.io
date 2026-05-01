@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Cristian Esplana</title>
+    <link rel="icon" type="image/png" href="DEVQA FAV.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <h1 class="logo" onclick="location.href='index.html'"><img src="LOGO.png" alt="logo" class="logo-icon">CRISTIAN</h1>
+            <div class="header-right">
+                <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
+                    <i class="fa fa-moon"></i>
+                </button>
+                <div class="search-box">
+                    <input type="text" id="siteSearch" placeholder="Search...">
+                </div>
+                <button id="menuBtn" class="menu-trigger">MENU ☰</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="navModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <nav>
+                <ul class="menu-list">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li><a href="about.html">ABOUT ME</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="mobile-container">
+        <section id="about" class="page active">
+            <h2>Personal Details</h2>
+            <div class="grid-layout">
+                <div class="card" id="aboutCard">
+                    <div class="profile-header">
+                        <i class="fa fa-user-circle"></i>
+                        <div class="profile-title">
+                            <h3>Cristian Esplana</h3>
+                            <p>2nd Year BSIT Student</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="about-details">
+                        <p><strong>Status:</strong> <span>Working Student</span></p>
+                        <p><strong>Current Role:</strong> <span>Freelance QA Analyst</span></p>
+                        <p><strong>Specialization:</strong> <span>Quality Assurance & Web Dev</span></p>
+                        <p><strong>Career Goal:</strong> <span>Senior QA Automation Engineer</span></p>
+                    </div>
+                </div>
+
+                <div class="card hobby-section">
+                    <h3><i class="fa fa-camera"></i> Photography</h3>
+                    <p>Outside of coding and testing, I capture stories through my lens, focusing on nature and urban landscapes.</p>
+                    <div id="hobbyGallery" class="hobby-gallery">
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/seed/forest/400/260" alt="Forest Trail" onclick="openImgModal('https://picsum.photos/seed/forest/900/600','Forest Trail — Morning light filtering through the trees during a hike in the highlands.')">
+                            <div class="gallery-caption">
+                                <strong>Forest Trail</strong>
+                                <span>Morning light filtering through the trees during a hike in the highlands.</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/seed/citynight/400/260" alt="City at Night" onclick="openImgModal('https://picsum.photos/seed/citynight/900/600','City at Night — Long-exposure shot of Manila\'s busy streets after sunset.')">
+                            <div class="gallery-caption">
+                                <strong>City at Night</strong>
+                                <span>Long-exposure shot of Manila's busy streets after sunset.</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/seed/ocean22/400/260" alt="Coastal Horizon" onclick="openImgModal('https://picsum.photos/seed/ocean22/900/600','Coastal Horizon — Golden hour at a quiet beach in Batangas, Philippines.')">
+                            <div class="gallery-caption">
+                                <strong>Coastal Horizon</strong>
+                                <span>Golden hour at a quiet beach in Batangas, Philippines.</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/seed/rooftop7/400/260" alt="Rooftop View" onclick="openImgModal('https://picsum.photos/seed/rooftop7/900/600','Rooftop View — Urban skyline captured from a rooftop during the blue hour.')">
+                            <div class="gallery-caption">
+                                <strong>Rooftop View</strong>
+                                <span>Urban skyline captured from a rooftop during the blue hour.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2026 Cristian Esplana. All rights reserved.</p>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imgModal">
+        <div class="img-modal-overlay" onclick="closeImgModal()"></div>
+        <div class="img-modal-box">
+            <button class="img-modal-close" onclick="closeImgModal()">&times;</button>
+            <img id="imgModalSrc" src="" alt="">
+            <p class="img-modal-caption" id="imgModalCaption"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

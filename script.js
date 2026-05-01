@@ -120,22 +120,6 @@ function closeImgModal() {
     document.getElementById('imgModalSrc').src = '';
 }
 
-// --- Page Navigation ---
-function showPage(pageId) {
-    const pages = document.querySelectorAll('.page');
-    pages.forEach(p => {
-        p.classList.remove('active');
-        p.style.display = "none";
-    });
-    const active = document.getElementById(pageId);
-    if(active) {
-        active.style.display = "block";
-        setTimeout(() => active.classList.add('active'), 50);
-    }
-    closeMenu();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
 // --- Navigation Modal Functions ---
 function openMenu() {
     const modal = document.getElementById("navModal");
@@ -188,6 +172,4 @@ window.onload = () => {
         item.addEventListener('click', () => openDetailModal('achievement', item.dataset.achievementId));
     });
 
-    // Default Page
-    showPage('home');
 };

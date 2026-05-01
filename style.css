@@ -85,7 +85,17 @@ body.dark header {
 /* Pages & Cards */
 .mobile-container { max-width: 600px; margin: auto; min-height: 80vh; }
 .page { display: none; padding: 20px; opacity: 0; transition: 0.5s ease; }
-.page.active { display: block; opacity: 1; }
+.page.active {
+    display: block;
+    opacity: 1;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 32px var(--shadow);
+    margin: 24px auto;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
 
 .card, .preview-item {
     background: linear-gradient(135deg, var(--card-bg) 0%, rgba(52, 152, 219, 0.12) 100%);
@@ -408,8 +418,9 @@ footer { text-align: center; padding: 30px; background: var(--header-bg); border
 .social-links a { color: var(--text); margin: 0 10px; font-size: 1.5rem; }
 
 /* ── Base (mobile-first, < 480px) ── */
-.mobile-container { max-width: 100%; margin: auto; min-height: 80vh; padding: 0; }
+.mobile-container { max-width: 100%; margin: auto; min-height: 80vh; padding: 0 10px; }
 .page { padding: 14px; }
+.page.active { margin: 14px auto; border-radius: 12px; }
 .scroll-preview { display: flex; flex-direction: column; gap: 12px; }
 .preview-item { margin-bottom: 0; }
 .hero-header { padding: 16px; }
