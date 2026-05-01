@@ -178,6 +178,8 @@ body.dark .hp-project { background: rgba(255,255,255,0.06); }
 .hp-project-top { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
 .hp-project strong { font-size: 0.9rem; }
 .hp-project p { margin: 0; font-size: 0.78rem; opacity: 0.8; line-height: 1.4; }
+.hp-project-img { width: 100%; max-height: 140px; object-fit: cover; border-radius: 6px; margin: 4px 0; }
+.hp-project-full .hp-project-img { max-height: 220px; }
 
 /* About home preview */
 .home-preview-about { display: flex; flex-direction: column; gap: 10px; }
@@ -437,6 +439,7 @@ footer p { font-size: 0.85rem; }
     .page { padding: 20px; }
     .scroll-preview { flex-direction: row; flex-wrap: wrap; }
     .scroll-preview .preview-item { flex: 1 1 calc(50% - 8px); }
+    .scroll-preview .preview-item:nth-child(1) { flex: 0 0 100%; width: 100%; }
     .hero-header h2 { font-size: 1.6rem; }
     .hero-header p  { font-size: 1rem; }
     .page h2 { font-size: 1.5rem; }
@@ -467,21 +470,24 @@ footer p { font-size: 0.85rem; }
     .scroll-preview .preview-item h4 { font-size: 1.15rem; margin: 0 0 2px; }
     .preview-sub { font-size: 0.82rem; margin-bottom: 14px; }
 
-    /* ── Projects inner: label left | 2 mini-cards right ── */
+    /* ── Projects inner: all cards stacked full-width ── */
     .home-preview-projects {
-        flex-direction: row;
-        flex: 1;
+        flex-direction: column;
         gap: 16px;
-        align-items: stretch;
     }
     .hp-project {
-        flex: 1;
+        flex: 0 0 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 6px;
     }
+    .hp-project-full {
+        flex: 0 0 100%;
+    }
     .hp-project strong { font-size: 1rem; }
     .hp-project p { font-size: 0.85rem; }
+    .hp-project-full .hp-project-img { max-height: 260px; }
 
     /* ── About inner: info left | photos right ── */
     .home-preview-about {
