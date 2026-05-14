@@ -200,6 +200,7 @@ body.dark .hp-project { background: rgba(255,255,255,0.06); }
     margin-bottom: 6px;
 }
 .hp-avatar { font-size: 2.2rem; color: rgba(155,89,182,0.7); }
+.hp-avatar-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--accent); }
 .hp-profile-row div { display: flex; flex-direction: column; }
 .hp-profile-row strong { font-size: 0.9rem; }
 .hp-profile-row span { font-size: 0.75rem; opacity: 0.7; }
