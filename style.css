@@ -61,7 +61,7 @@ body.dark header {
 .theme-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #fff; }
 
 .logo { color: #fff; margin: 0; cursor: pointer; display: flex; align-items: center; font-size: 1.6rem; }
-.logo-icon { height: 60px; width: 60px; object-fit: contain; margin-right: 10px; }
+.logo-icon { height: 60px; width: 60px; object-fit: cover; margin-right: 10px; border-radius: 50%; }
 
 .search-box input {
     background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
