@@ -13,7 +13,7 @@
 
     <header>
         <div class="nav-container">
-            <h1 class="logo" onclick="location.href='index.html'"><img src="Cat.png" alt="logo" class="logo-icon">CRISTIAN</h1>
+            <a href="index.html" class="logo"><img src="Cat.png" alt="logo" class="logo-icon">CRISTIAN</a>
             <div class="header-right">
                 <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
                     <i class="fa fa-moon"></i>
@@ -29,13 +29,22 @@
     <div id="navModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
+            <div class="menu-extras">
+                <div class="menu-search-box">
+                    <i class="fa fa-search"></i>
+                    <input type="text" id="menuSearch" placeholder="Search...">
+                </div>
+                <button type="button" id="menuThemeToggle" class="menu-theme-btn" title="Toggle Dark/Light Mode">
+                    <i class="fa fa-moon"></i> <span>Dark Mode</span>
+                </button>
+            </div>
             <nav>
                 <ul class="menu-list">
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="projects.html">PROJECTS</a></li>
                     <li><a href="about.html">ABOUT ME</a></li>
                     <li><a href="contact.html">CONTACT US</a></li>
-                    <li><a href="#" class="logout-link" onclick="sessionStorage.removeItem('portfolio_auth'); window.location.href='login.html';"><i class="fa fa-sign-out-alt"></i> SIGN OUT</a></li>
+                    <li><a href="#" class="logout-link" data-logout><i class="fa fa-sign-out-alt"></i> SIGN OUT</a></li>
                 </ul>
             </nav>
         </div>

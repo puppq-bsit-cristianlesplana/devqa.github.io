@@ -13,7 +13,7 @@
 
     <header>
         <div class="nav-container">
-            <h1 class="logo" onclick="location.href='index.html'"><img src="Cat.png" alt="logo" class="logo-icon">CRISTIAN</h1>
+            <a href="index.html" class="logo"><img src="Cat.png" alt="logo" class="logo-icon">CRISTIAN</a>
             <div class="header-right">
                 <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
                     <i class="fa fa-moon"></i>
@@ -29,13 +29,22 @@
     <div id="navModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
+            <div class="menu-extras">
+                <div class="menu-search-box">
+                    <i class="fa fa-search"></i>
+                    <input type="text" id="menuSearch" placeholder="Search...">
+                </div>
+                <button type="button" id="menuThemeToggle" class="menu-theme-btn" title="Toggle Dark/Light Mode">
+                    <i class="fa fa-moon"></i> <span>Dark Mode</span>
+                </button>
+            </div>
             <nav>
                 <ul class="menu-list">
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="projects.html">PROJECTS</a></li>
                     <li><a href="about.html">ABOUT ME</a></li>
                     <li><a href="contact.html">CONTACT US</a></li>
-                    <li><a href="#" class="logout-link" onclick="sessionStorage.removeItem('portfolio_auth'); window.location.href='login.html';"><i class="fa fa-sign-out-alt"></i> SIGN OUT</a></li>
+                    <li><a href="#" class="logout-link" data-logout><i class="fa fa-sign-out-alt"></i> SIGN OUT</a></li>
                 </ul>
             </nav>
         </div>
@@ -67,28 +76,28 @@
                     <p>Outside of coding and testing, I capture stories through my lens, focusing on nature and urban landscapes.</p>
                     <div id="hobbyGallery" class="hobby-gallery">
                         <div class="gallery-item">
-                            <img src="gallery1.jpg" alt="Manila Riverside" onclick="openImgModal('gallery1.jpg','Manila Riverside — Golden hour along the Pasig River with the historic post office building.')">
+                            <img src="gallery1.jpg" alt="Manila Riverside" data-lightbox="gallery1.jpg" data-caption="Manila Riverside — Golden hour along the Pasig River with the historic post office building.">
                             <div class="gallery-caption">
                                 <strong>Manila Riverside</strong>
                                 <span>Golden hour along the Pasig River with the historic post office building.</span>
                             </div>
                         </div>
                         <div class="gallery-item">
-                            <img src="gallery2.jpg" alt="Taal Volcano, Tagaytay" onclick="openImgModal('gallery2.jpg','Taal Volcano, Tagaytay — Scenic view of Taal Lake and Volcano Island from Starbucks Tagaytay.')">
+                            <img src="gallery2.jpg" alt="Taal Volcano, Tagaytay" data-lightbox="gallery2.jpg" data-caption="Taal Volcano, Tagaytay — Scenic view of Taal Lake and Volcano Island from Starbucks Tagaytay.">
                             <div class="gallery-caption">
                                 <strong>Taal Volcano, Tagaytay</strong>
                                 <span>Scenic view of Taal Lake and Volcano Island from Starbucks Tagaytay.</span>
                             </div>
                         </div>
                         <div class="gallery-item">
-                            <img src="https://picsum.photos/seed/ocean22/400/260" alt="Coastal Horizon" onclick="openImgModal('https://picsum.photos/seed/ocean22/900/600','Coastal Horizon — Golden hour at a quiet beach in Batangas, Philippines.')">
+                            <img src="https://picsum.photos/seed/ocean22/400/260" alt="Coastal Horizon" data-lightbox="https://picsum.photos/seed/ocean22/900/600" data-caption="Coastal Horizon — Golden hour at a quiet beach in Batangas, Philippines.">
                             <div class="gallery-caption">
                                 <strong>Coastal Horizon</strong>
                                 <span>Golden hour at a quiet beach in Batangas, Philippines.</span>
                             </div>
                         </div>
                         <div class="gallery-item">
-                            <img src="https://picsum.photos/seed/rooftop7/400/260" alt="Rooftop View" onclick="openImgModal('https://picsum.photos/seed/rooftop7/900/600','Rooftop View — Urban skyline captured from a rooftop during the blue hour.')">
+                            <img src="https://picsum.photos/seed/rooftop7/400/260" alt="Rooftop View" data-lightbox="https://picsum.photos/seed/rooftop7/900/600" data-caption="Rooftop View — Urban skyline captured from a rooftop during the blue hour.">
                             <div class="gallery-caption">
                                 <strong>Rooftop View</strong>
                                 <span>Urban skyline captured from a rooftop during the blue hour.</span>
@@ -111,9 +120,9 @@
 
     <!-- Image Lightbox Modal -->
     <div id="imgModal">
-        <div class="img-modal-overlay" onclick="closeImgModal()"></div>
+        <div class="img-modal-overlay"></div>
         <div class="img-modal-box">
-            <button class="img-modal-close" onclick="closeImgModal()">&times;</button>
+            <button class="img-modal-close">&times;</button>
             <img id="imgModalSrc" src="" alt="">
             <p class="img-modal-caption" id="imgModalCaption"></p>
         </div>

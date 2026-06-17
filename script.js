@@ -1,4 +1,7 @@
-// --- Portfolio Data ---
+// ──────────────────────────────────────────────
+//  Portfolio App — Object-Oriented Architecture
+// ──────────────────────────────────────────────
+
 const PORTFOLIO_DATA = {
     projects: {
         polycal1: {
@@ -74,131 +77,285 @@ const PORTFOLIO_DATA = {
     },
 };
 
-// --- Detail Modal ---
-function openDetailModal(type, id) {
-    const store = type === 'project' ? PORTFOLIO_DATA.projects : PORTFOLIO_DATA.achievements;
-    const data = store[id];
-    if (!data) return;
-
-    if (type === 'project') {
-        document.getElementById('detailMeta').innerHTML =
-            `<span class="subject-tag">${data.subject}</span>
-             <span class="platform-tag"><i class="fa ${data.platformIcon}"></i> ${data.platform}</span>`;
-        document.getElementById('detailTitle').innerHTML = `<i class="fa ${data.icon}"></i> ${data.title}`;
-        document.getElementById('detailTech').innerHTML = data.tech.map(t => `<span class="tech">${t}</span>`).join('');
-        document.getElementById('detailTech').style.display = '';
-    } else {
-        document.getElementById('detailMeta').innerHTML =
-            `<i class="fa ${data.icon} detail-achievement-icon"></i>`;
-        document.getElementById('detailTitle').textContent = data.title;
-        document.getElementById('detailTech').style.display = 'none';
-    }
-
-    document.getElementById('detailDesc').innerHTML = data.desc;
-
-    const img = document.getElementById('detailImg');
-    img.src = data.img;
-    img.alt = data.title;
-    img.onclick = () => openImgModal(data.img, data.title);
-
-    document.getElementById('detailModal').classList.add('show');
-}
-
-function closeDetailModal() {
-    document.getElementById('detailModal').classList.remove('show');
-}
-
-// --- Section Preview Modal ---
 const SECTION_CONFIG = {
     projects: { title: 'Projects',  icon: 'fa-code',     href: 'projects.html', btn: 'Go to Projects Page' },
     about:    { title: 'About Me',  icon: 'fa-user',     href: 'about.html',    btn: 'Go to About Me Page' },
     contact:  { title: 'Contact',   icon: 'fa-envelope', href: 'contact.html',  btn: 'Go to Contact Page'  },
 };
 
-function openSectionPreview(section) {
-    const cfg = SECTION_CONFIG[section];
-    const sourceEl = document.querySelector(`.home-preview-${section}`);
-    if (!cfg || !sourceEl) return;
 
-    document.getElementById('sectionPreviewTitle').innerHTML = `<i class="fa ${cfg.icon}"></i> ${cfg.title}`;
-    document.getElementById('sectionPreviewContent').innerHTML = sourceEl.outerHTML;
-    document.getElementById('sectionPreviewLink').href = cfg.href;
-    document.getElementById('sectionPreviewBtnText').textContent = cfg.btn;
-    document.getElementById('sectionPreviewModal').classList.add('show');
-}
+// ── Theme Manager ──
 
-function closeSectionPreview() {
-    document.getElementById('sectionPreviewModal').classList.remove('show');
-}
+class ThemeManager {
+    constructor() {
+        this.headerBtn  = document.getElementById('themeToggle');
+        this.menuBtn    = document.getElementById('menuThemeToggle');
+        this.headerIcon = this.headerBtn?.querySelector('i');
+        this.menuIcon   = this.menuBtn?.querySelector('i');
+        this.menuLabel  = this.menuBtn?.querySelector('span');
 
-// --- Image Lightbox ---
-function openImgModal(src, caption) {
-    document.getElementById('imgModalSrc').src = src;
-    document.getElementById('imgModalCaption').textContent = caption || '';
-    document.getElementById('imgModal').classList.add('show');
-}
-
-function closeImgModal() {
-    document.getElementById('imgModal').classList.remove('show');
-    document.getElementById('imgModalSrc').src = '';
-}
-
-// --- Navigation Modal Functions ---
-function openMenu() {
-    const modal = document.getElementById("navModal");
-    modal.style.display = "block";
-    setTimeout(() => modal.classList.add("show"), 10);
-}
-
-function closeMenu() {
-    const modal = document.getElementById("navModal");
-    if(!modal) return;
-    modal.classList.remove("show");
-    setTimeout(() => {
-        if (!modal.classList.contains("show")) modal.style.display = "none";
-    }, 400);
-}
-
-// --- Initialization ---
-window.onload = () => {
-    // Button Clicks
-    document.getElementById("menuBtn").onclick = openMenu;
-    document.querySelector(".close").onclick = closeMenu;
-
-    // Dark Mode — restore saved preference
-    const themeBtn = document.getElementById("themeToggle");
-    const icon = themeBtn.querySelector("i");
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark");
-        icon.classList.replace("fa-moon", "fa-sun");
+        this._restore();
+        this._bind();
     }
-    themeBtn.onclick = () => {
-        document.body.classList.toggle("dark");
-        if (document.body.classList.contains("dark")) {
-            icon.classList.replace("fa-moon", "fa-sun");
-            localStorage.setItem("theme", "dark");
-        } else {
-            icon.classList.replace("fa-sun", "fa-moon");
-            localStorage.setItem("theme", "light");
+
+    get isDark() {
+        return document.body.classList.contains('dark');
+    }
+
+    toggle() {
+        this._apply(!this.isDark);
+    }
+
+    _apply(isDark) {
+        document.body.classList.toggle('dark', isDark);
+
+        const [add, remove] = isDark ? ['fa-sun', 'fa-moon'] : ['fa-moon', 'fa-sun'];
+        this.headerIcon?.classList.replace(remove, add);
+        this.menuIcon?.classList.replace(remove, add);
+
+        if (this.menuLabel) {
+            this.menuLabel.textContent = isDark ? 'Light Mode' : 'Dark Mode';
         }
-    };
 
-    // Simple Search
-    document.getElementById('siteSearch')?.addEventListener('keyup', (e) => {
-        let term = e.target.value.toLowerCase();
-        document.querySelectorAll('.card, .preview-item').forEach(item => {
-            item.style.display = item.innerText.toLowerCase().includes(term) ? "block" : "none";
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    _restore() {
+        if (localStorage.getItem('theme') === 'dark') this._apply(true);
+    }
+
+    _bind() {
+        const handler = () => this.toggle();
+        this.headerBtn?.addEventListener('click', handler);
+        this.menuBtn?.addEventListener('click', handler);
+    }
+}
+
+
+// ── Search Manager ──
+
+class SearchManager {
+    constructor() {
+        this.headerInput = document.getElementById('siteSearch');
+        this.menuInput   = document.getElementById('menuSearch');
+        this._bind();
+    }
+
+    filter(term) {
+        const lower = term.toLowerCase();
+        document.querySelectorAll('.card, .preview-item').forEach(el => {
+            el.style.display = el.innerText.toLowerCase().includes(lower) ? 'block' : 'none';
         });
-    });
+    }
 
-    // Project card clicks → detail modal
-    document.querySelectorAll('.project-card[data-project-id]').forEach(card => {
-        card.addEventListener('click', () => openDetailModal('project', card.dataset.projectId));
-    });
+    _bind() {
+        const handler = (e) => this.filter(e.target.value);
+        this.headerInput?.addEventListener('keyup', handler);
+        this.menuInput?.addEventListener('keyup', handler);
+    }
+}
 
-    // Achievement item clicks → detail modal
-    document.querySelectorAll('.achievement-item[data-achievement-id]').forEach(item => {
-        item.addEventListener('click', () => openDetailModal('achievement', item.dataset.achievementId));
-    });
 
-};
+// ── Modal (base class) ──
+
+class Modal {
+    constructor(id) {
+        this.el = document.getElementById(id);
+    }
+
+    open() {
+        this.el?.classList.add('show');
+    }
+
+    close() {
+        this.el?.classList.remove('show');
+    }
+}
+
+
+// ── Nav Modal (animated slide-down) ──
+
+class NavModal extends Modal {
+    constructor() {
+        super('navModal');
+        this.openBtn  = document.getElementById('menuBtn');
+        this.closeBtn = this.el?.querySelector('.close');
+        this._bind();
+    }
+
+    open() {
+        if (!this.el) return;
+        this.el.style.display = 'block';
+        setTimeout(() => this.el.classList.add('show'), 10);
+    }
+
+    close() {
+        if (!this.el) return;
+        this.el.classList.remove('show');
+        setTimeout(() => {
+            if (!this.el.classList.contains('show')) {
+                this.el.style.display = 'none';
+            }
+        }, 400);
+    }
+
+    _bind() {
+        this.openBtn?.addEventListener('click', () => this.open());
+        this.closeBtn?.addEventListener('click', () => this.close());
+    }
+}
+
+
+// ── Image Lightbox Modal ──
+
+class ImageModal extends Modal {
+    constructor() {
+        super('imgModal');
+        this.imgEl     = document.getElementById('imgModalSrc');
+        this.captionEl = document.getElementById('imgModalCaption');
+
+        this.el?.querySelector('.img-modal-overlay')?.addEventListener('click', () => this.close());
+        this.el?.querySelector('.img-modal-close')?.addEventListener('click', () => this.close());
+        this._bindLightboxImages();
+    }
+
+    _bindLightboxImages() {
+        document.querySelectorAll('[data-lightbox]').forEach(img => {
+            img.addEventListener('click', () => this.open(img.dataset.lightbox, img.dataset.caption));
+        });
+    }
+
+    open(src, caption) {
+        if (!this.imgEl) return;
+        this.imgEl.src = src;
+        this.captionEl.textContent = caption || '';
+        super.open();
+    }
+
+    close() {
+        super.close();
+        if (this.imgEl) this.imgEl.src = '';
+    }
+}
+
+
+// ── Detail Modal (projects & achievements) ──
+
+class DetailModal extends Modal {
+    constructor(imageModal) {
+        super('detailModal');
+        this.imageModal = imageModal;
+        this.refs = {
+            meta:  document.getElementById('detailMeta'),
+            title: document.getElementById('detailTitle'),
+            desc:  document.getElementById('detailDesc'),
+            tech:  document.getElementById('detailTech'),
+            img:   document.getElementById('detailImg'),
+        };
+
+        this.el?.querySelector('.detail-modal-overlay')?.addEventListener('click', () => this.close());
+        this.el?.querySelector('.detail-modal-close')?.addEventListener('click', () => this.close());
+        this._bindCards();
+    }
+
+    open(type, id) {
+        const store = type === 'project' ? PORTFOLIO_DATA.projects : PORTFOLIO_DATA.achievements;
+        const item = store[id];
+        if (!item || !this.refs.meta) return;
+
+        if (type === 'project') {
+            this.refs.meta.innerHTML =
+                `<span class="subject-tag">${item.subject}</span>
+                 <span class="platform-tag"><i class="fa ${item.platformIcon}"></i> ${item.platform}</span>`;
+            this.refs.title.innerHTML = `<i class="fa ${item.icon}"></i> ${item.title}`;
+            this.refs.tech.innerHTML = item.tech.map(t => `<span class="tech">${t}</span>`).join('');
+            this.refs.tech.style.display = '';
+        } else {
+            this.refs.meta.innerHTML = `<i class="fa ${item.icon} detail-achievement-icon"></i>`;
+            this.refs.title.textContent = item.title;
+            this.refs.tech.style.display = 'none';
+        }
+
+        this.refs.desc.innerHTML = item.desc;
+        this.refs.img.src = item.img;
+        this.refs.img.alt = item.title;
+        this.refs.img.onclick = () => this.imageModal.open(item.img, item.title);
+
+        super.open();
+    }
+
+    _bindCards() {
+        document.querySelectorAll('[data-project-id]').forEach(card => {
+            card.addEventListener('click', () => this.open('project', card.dataset.projectId));
+        });
+        document.querySelectorAll('[data-achievement-id]').forEach(item => {
+            item.addEventListener('click', () => this.open('achievement', item.dataset.achievementId));
+        });
+    }
+}
+
+
+// ── Section Preview Modal (home page) ──
+
+class SectionPreviewModal extends Modal {
+    constructor() {
+        super('sectionPreviewModal');
+        this.refs = {
+            title:   document.getElementById('sectionPreviewTitle'),
+            content: document.getElementById('sectionPreviewContent'),
+            link:    document.getElementById('sectionPreviewLink'),
+            btnText: document.getElementById('sectionPreviewBtnText'),
+        };
+
+        this.el?.querySelector('.section-preview-overlay')?.addEventListener('click', () => this.close());
+        this.el?.querySelector('.section-preview-close')?.addEventListener('click', () => this.close());
+        this._bindPreviews();
+    }
+
+    open(section) {
+        const cfg = SECTION_CONFIG[section];
+        const sourceEl = document.querySelector(`.home-preview-${section}`);
+        if (!cfg || !sourceEl || !this.refs.title) return;
+
+        this.refs.title.innerHTML   = `<i class="fa ${cfg.icon}"></i> ${cfg.title}`;
+        this.refs.content.innerHTML = sourceEl.outerHTML;
+        this.refs.link.href         = cfg.href;
+        this.refs.btnText.textContent = cfg.btn;
+
+        super.open();
+    }
+
+    _bindPreviews() {
+        document.querySelectorAll('[data-section]').forEach(item => {
+            item.addEventListener('click', () => this.open(item.dataset.section));
+        });
+    }
+}
+
+
+// ── Portfolio App (main controller) ──
+
+class PortfolioApp {
+    constructor() {
+        this.theme          = new ThemeManager();
+        this.search         = new SearchManager();
+        this.navModal       = new NavModal();
+        this.imageModal     = new ImageModal();
+        this.detailModal    = new DetailModal(this.imageModal);
+        this.sectionPreview = new SectionPreviewModal();
+
+        this._bindLogout();
+    }
+
+    _bindLogout() {
+        document.querySelectorAll('[data-logout]').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                sessionStorage.removeItem('portfolio_auth');
+                window.location.href = 'login.html';
+            });
+        });
+    }
+}
+
+window.onload = () => new PortfolioApp();
