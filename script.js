@@ -84,54 +84,6 @@ const SECTION_CONFIG = {
 };
 
 
-// ── Theme Manager ──
-
-class ThemeManager {
-    constructor() {
-        this.headerBtn  = document.getElementById('themeToggle');
-        this.menuBtn    = document.getElementById('menuThemeToggle');
-        this.headerIcon = this.headerBtn?.querySelector('i');
-        this.menuIcon   = this.menuBtn?.querySelector('i');
-        this.menuLabel  = this.menuBtn?.querySelector('span');
-
-        this._restore();
-        this._bind();
-    }
-
-    get isDark() {
-        return document.body.classList.contains('dark');
-    }
-
-    toggle() {
-        this._apply(!this.isDark);
-    }
-
-    _apply(isDark) {
-        document.body.classList.toggle('dark', isDark);
-
-        const [add, remove] = isDark ? ['fa-sun', 'fa-moon'] : ['fa-moon', 'fa-sun'];
-        this.headerIcon?.classList.replace(remove, add);
-        this.menuIcon?.classList.replace(remove, add);
-
-        if (this.menuLabel) {
-            this.menuLabel.textContent = isDark ? 'Light Mode' : 'Dark Mode';
-        }
-
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
-
-    _restore() {
-        if (localStorage.getItem('theme') !== 'light') this._apply(true);
-    }
-
-    _bind() {
-        const handler = () => this.toggle();
-        this.headerBtn?.addEventListener('click', handler);
-        this.menuBtn?.addEventListener('click', handler);
-    }
-}
-
-
 // ── Search Manager ──
 
 class SearchManager {
@@ -337,7 +289,6 @@ class SectionPreviewModal extends Modal {
 
 class PortfolioApp {
     constructor() {
-        this.theme          = new ThemeManager();
         this.search         = new SearchManager();
         this.navModal       = new NavModal();
         this.imageModal     = new ImageModal();

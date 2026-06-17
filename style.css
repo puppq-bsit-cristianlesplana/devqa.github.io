@@ -136,22 +136,6 @@ header {
     border: 2px solid var(--border);
 }
 
-.theme-btn {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 6px 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    color: var(--text-secondary);
-    transition: border-color 0.3s, color 0.3s;
-}
-
-.theme-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
 .search-box input {
     background: var(--bg-card);
     color: var(--text-primary);
@@ -283,26 +267,7 @@ header {
     outline: none;
 }
 
-.menu-theme-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 10px 16px;
-    border-radius: 24px;
-    border: 1px solid var(--border);
-    background: var(--bg-card);
-    color: var(--text-primary);
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: border-color 0.3s;
-}
 
-.menu-theme-btn:hover { border-color: var(--accent); }
-.menu-theme-btn i { color: var(--accent); font-size: 1.1rem; }
 
 
 /* ── 5. Pages & Glassmorphic Cards ── */
@@ -1096,8 +1061,7 @@ header {
 /* ── 16. Responsive Breakpoints ── */
 
 /* Mobile-first base */
-.header-right .search-box,
-.header-right .theme-btn { display: none; }
+.header-right .search-box { display: none; }
 
 .mobile-container { max-width: 100%; margin: auto; min-height: 80vh; padding: 0 12px; }
 .page { padding: 16px; }
@@ -1141,7 +1105,6 @@ footer p { font-size: 0.85rem; }
 /* Desktop (>= 768px) */
 @media (min-width: 768px) {
     .header-right .search-box { display: block; }
-    .header-right .theme-btn { display: inline-block; }
     .menu-extras { display: none; }
 
     .mobile-container { max-width: 1160px; padding: 0 24px; }

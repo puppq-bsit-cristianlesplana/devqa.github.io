@@ -13,18 +13,14 @@
     <header>
         <div class="nav-container">
             <h1 class="logo"><img src="Cat.png" alt="logo" class="logo-icon">CRISTIAN</h1>
-            <div class="header-right">
-                <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
-                    <i class="fa fa-moon"></i>
-                </button>
-            </div>
+            <div class="header-right"></div>
         </div>
     </header>
 
     <main class="mobile-container">
         <section class="page active">
             <div class="hero-header" style="text-align:center;">
-                <h1>Welcome</h1>
+                <h2>Welcome</h2>
                 <p>Enter the password to access the portfolio.</p>
             </div>
             <div class="login-box">
@@ -60,30 +56,6 @@
     </footer>
 
     <script>
-        class LoginTheme {
-            constructor() {
-                this.btn  = document.getElementById('themeToggle');
-                this.icon = this.btn.querySelector('i');
-                this._restore();
-                this.btn.addEventListener('click', () => this._toggle());
-            }
-
-            _toggle() {
-                this._apply(!document.body.classList.contains('dark'));
-            }
-
-            _apply(isDark) {
-                document.body.classList.toggle('dark', isDark);
-                const [add, remove] = isDark ? ['fa-sun', 'fa-moon'] : ['fa-moon', 'fa-sun'];
-                this.icon.classList.replace(remove, add);
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            }
-
-            _restore() {
-                if (localStorage.getItem('theme') !== 'light') this._apply(true);
-            }
-        }
-
         class LoginForm {
             constructor(password) {
                 this.password  = password;
@@ -125,8 +97,7 @@
                     window.location.href = 'index.html';
                     return;
                 }
-                this.theme = new LoginTheme();
-                this.form  = new LoginForm('devqa2026');
+                this.form = new LoginForm('devqa2026');
             }
         }
 
