@@ -121,7 +121,7 @@ class ThemeManager {
     }
 
     _restore() {
-        if (localStorage.getItem('theme') === 'dark') this._apply(true);
+        if (localStorage.getItem('theme') !== 'light') this._apply(true);
     }
 
     _bind() {
