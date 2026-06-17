@@ -916,6 +916,50 @@ header {
 .section-preview-title { margin: 0 0 16px; font-size: 1.2rem; color: var(--accent); }
 .section-preview-content { margin-bottom: 20px; }
 
+/* Fix cloned content inside the section preview modal */
+.section-preview-content .home-preview-about {
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-preview-content .hp-about-info {
+    width: 100%;
+}
+
+.section-preview-content .hp-detail-row {
+    display: flex;
+    width: 100%;
+}
+
+.section-preview-content .hp-about-photos {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    min-height: 0;
+}
+
+.section-preview-content .hp-about-photos img {
+    width: 140px;
+    height: 100px;
+}
+
+.section-preview-content .home-preview-projects {
+    flex-direction: column;
+}
+
+.section-preview-content .hp-project {
+    width: 100%;
+}
+
+.section-preview-content .home-preview-contact {
+    flex-direction: column;
+}
+
+.section-preview-content .hp-form input,
+.section-preview-content .hp-form textarea {
+    pointer-events: none;
+}
+
 .section-preview-btn {
     display: flex; align-items: center; justify-content: center; gap: 8px;
     background: var(--gradient-accent); color: #fff; text-decoration: none;
