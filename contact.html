@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>if(sessionStorage.getItem("portfolio_auth")!=="true")window.location.href="login.html";</script>
     <title>Contact | Cristian Esplana</title>
     <link rel="icon" type="image/png" href="Cat.png">
     <link rel="stylesheet" href="style.css">
@@ -34,6 +35,7 @@
                     <li><a href="projects.html">PROJECTS</a></li>
                     <li><a href="about.html">ABOUT ME</a></li>
                     <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="#" class="logout-link" onclick="sessionStorage.removeItem('portfolio_auth'); window.location.href='login.html';"><i class="fa fa-sign-out-alt"></i> SIGN OUT</a></li>
                 </ul>
             </nav>
         </div>
