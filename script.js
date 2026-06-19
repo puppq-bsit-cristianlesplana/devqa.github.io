@@ -389,6 +389,17 @@ class PortfolioApp {
         this.sectionPreview = new SectionPreviewModal();
 
         this._bindLogout();
+        this._autoOpen();
+    }
+
+    _autoOpen() {
+        const id = new URLSearchParams(window.location.search).get('open');
+        if (!id) return;
+        if (PORTFOLIO_DATA.projects[id]) {
+            this.detailModal.open('project', id);
+        } else if (PORTFOLIO_DATA.achievements[id]) {
+            this.detailModal.open('achievement', id);
+        }
     }
 
     _bindLogout() {
