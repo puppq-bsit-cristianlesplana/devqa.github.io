@@ -287,8 +287,31 @@ class SectionPreviewModal extends Modal {
 
 // ── Portfolio App (main controller) ──
 
+class TubelightNav {
+    constructor() {
+        this._setActive();
+    }
+
+    _setActive() {
+        const path = window.location.pathname.split('/').pop() || 'index.html';
+        const pageMap = {
+            'index.html': 'index',
+            'projects.html': 'projects',
+            'about.html': 'about',
+            'contact.html': 'contact',
+        };
+        const current = pageMap[path] || (path === '' ? 'index' : null);
+        if (!current) return;
+        document.querySelectorAll('.tubelight-link').forEach(link => {
+            link.classList.toggle('active', link.dataset.page === current);
+        });
+    }
+}
+
+
 class PortfolioApp {
     constructor() {
+        this.tubelightNav   = new TubelightNav();
         this.search         = new SearchManager();
         this.navModal       = new NavModal();
         this.imageModal     = new ImageModal();
