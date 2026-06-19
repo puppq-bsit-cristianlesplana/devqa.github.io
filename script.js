@@ -12,7 +12,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-desktop',
             desc: 'A student calendar desktop app for Polytechnic students to manage schedules, deadlines, and subjects — built with <strong>Python (Tkinter)</strong>.',
             tech: ['Python', 'Tkinter'],
-            img: '473167842_1277725740165776_4760458389630140038_n.png',
+            img: 'images/PolyCal.png',
         },
         polycal2: {
             title: 'POLYCAL v2',
@@ -22,7 +22,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-mobile-alt',
             desc: 'Mobile version of POLYCAL redesigned for Android using <strong>Python (Kivy)</strong>, featuring a touch-friendly UI for on-the-go scheduling.',
             tech: ['Python', 'Kivy'],
-            img: 'polycalmobile.png',
+            img: 'images/PolyCalMobile.png',
         },
         tictactoe: {
             title: 'Tic-Tac-Toe',
@@ -32,7 +32,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-users',
             desc: 'A console-based two-player Tic-Tac-Toe game developed as a group project, applying object-oriented programming concepts in <strong>C++</strong>.',
             tech: ['C++', 'OOP'],
-            img: 'tictactoe.png',
+            img: 'images/Tic-Tac-Toe.png',
         },
         linking: {
             title: 'Linking Function',
@@ -42,7 +42,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-users',
             desc: 'A group project demonstrating linked data structures and function chaining using <strong>Python</strong>, applying DSA concepts in a practical system.',
             tech: ['Python', 'DSA'],
-            img: 'linking.png',
+            img: 'images/Linking-DATASTRUCTURE.png',
         },
         bookinventory: {
             title: 'Book Inventory CRUD',
@@ -52,7 +52,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-user',
             desc: 'A solo CRUD application for managing a book inventory system — built with <strong>Java</strong>, covering create, read, update, and delete operations.',
             tech: ['Java', 'CRUD'],
-            img: 'bookcrud.png',
+            img: 'images/BookManagement.png',
         },
     },
     achievements: {
@@ -60,19 +60,20 @@ const PORTFOLIO_DATA = {
             title: 'Programming Session Certificate',
             icon: 'fa-certificate',
             desc: 'Attended a programming workshop/session and earned a certificate of participation, reinforcing skills in software development practices.',
-            img: 'https://picsum.photos/seed/cert1/700/450',
+            img: 'images/Esplana-Java Certificate.png',
         },
         cert2: {
             title: 'POLYCAL — Dual-Platform Release',
             icon: 'fa-trophy',
             desc: 'Successfully delivered the same project across two platforms (Desktop & Mobile) across consecutive semesters using different Python frameworks.',
-            img: 'https://picsum.photos/seed/cert2/700/450',
+            img: 'images/PolyCal.png',
+
         },
         cert3: {
             title: 'Multi-Language Developer',
             icon: 'fa-code-branch',
             desc: 'Completed academic projects across Python, C++, and Java — demonstrating versatility in multiple programming languages within two years.',
-            img: 'https://picsum.photos/seed/cert3/700/450',
+            img: 'images/Esplana-Java Certificate.png',
         },
     },
 };
@@ -334,7 +335,7 @@ class AvatarPicker {
         this.display.classList.add('spin');
 
         if (btn.dataset.avatar === 'photo') {
-            this.display.innerHTML = '<img src="DP.jpg" alt="Cristian Esplana">';
+            this.display.innerHTML = '<img src="images/DP.jpg" alt="Cristian Esplana">';
         } else {
             const svg = btn.querySelector('svg');
             if (svg) this.display.innerHTML = svg.outerHTML;
