@@ -343,11 +343,46 @@ class AvatarPicker {
 }
 
 
+class GalleryCarousel {
+    constructor() {
+        this.carousel = document.getElementById('galleryCarousel');
+        this.dotsContainer = document.getElementById('galleryDots');
+        this.prevBtn = document.getElementById('galleryPrev');
+        this.nextBtn = document.getElementById('galleryNext');
+        if (!this.carousel) return;
+
+        this.slides = this.carousel.querySelectorAll('.gallery-slide');
+        this.dots = this.dotsContainer?.querySelectorAll('.carousel-dot');
+        this.current = 0;
+        this.total = this.slides.length;
+
+        this._bind();
+    }
+
+    _bind() {
+        this.prevBtn?.addEventListener('click', () => this.go((this.current - 1 + this.total) % this.total));
+        this.nextBtn?.addEventListener('click', () => this.go((this.current + 1) % this.total));
+        this.dots?.forEach(dot => {
+            dot.addEventListener('click', () => this.go(parseInt(dot.dataset.slide)));
+        });
+    }
+
+    go(index) {
+        this.slides[this.current].classList.remove('active');
+        this.dots?.[this.current]?.classList.remove('active');
+        this.current = index;
+        this.slides[this.current].classList.add('active');
+        this.dots?.[this.current]?.classList.add('active');
+    }
+}
+
+
 class PortfolioApp {
     constructor() {
-        this.tubelightNav   = new TubelightNav();
-        this.avatarPicker   = new AvatarPicker();
-        this.search         = new SearchManager();
+        this.tubelightNav     = new TubelightNav();
+        this.avatarPicker     = new AvatarPicker();
+        this.galleryCarousel  = new GalleryCarousel();
+        this.search           = new SearchManager();
         this.navModal       = new NavModal();
         this.imageModal     = new ImageModal();
         this.detailModal    = new DetailModal(this.imageModal);

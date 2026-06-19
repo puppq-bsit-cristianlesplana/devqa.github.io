@@ -54,18 +54,13 @@
     <main class="mobile-container">
         <section id="about" class="page active">
             <h2>Personal Details</h2>
-            <div class="grid-layout">
-                <div class="card avatar-picker-card" id="aboutCard">
-                    <div class="avatar-picker">
-                        <div class="avatar-picker-banner"></div>
-                        <div class="avatar-picker-display" id="avatarDisplay">
-                            <div class="avatar-picker-content" id="avatarContent">
-                                <img src="DP.jpg" alt="Cristian Esplana" id="avatarMainImg">
-                            </div>
-                        </div>
-                        <div class="avatar-picker-info">
-                            <h3>Cristian Esplana</h3>
-                            <p>Select your avatar</p>
+
+            <!-- Profile Card — Testimonial Layout -->
+            <div class="profile-tc" id="aboutCard">
+                <div class="profile-tc-layout">
+                    <div class="profile-tc-image">
+                        <div class="avatar-picker-content" id="avatarContent">
+                            <img src="DP.jpg" alt="Cristian Esplana" id="avatarMainImg">
                         </div>
                         <div class="avatar-picker-options" id="avatarOptions">
                             <button type="button" class="avatar-opt active" data-avatar="photo" title="Profile Photo">
@@ -85,50 +80,68 @@
                             </button>
                         </div>
                     </div>
-                    <div class="avatar-picker-details">
-                    <hr>
-                    <div class="about-details">
-                        <p><strong>Status:</strong> <span>Working Student</span></p>
-                        <p><strong>Current Role:</strong> <span>Freelance QA Analyst</span></p>
-                        <p><strong>Specialization:</strong> <span>Quality Assurance & Web Dev</span></p>
-                        <p><strong>Career Goal:</strong> <span>Senior QA Automation Engineer</span></p>
-                    </div>
+                    <div class="profile-tc-card">
+                        <h2>Cristian Esplana</h2>
+                        <p class="profile-tc-subtitle">2nd Year BSIT Student</p>
+                        <div class="about-details">
+                            <p><strong>Status:</strong> <span>Working Student</span></p>
+                            <p><strong>Current Role:</strong> <span>Freelance QA Analyst</span></p>
+                            <p><strong>Specialization:</strong> <span>Quality Assurance & Web Dev</span></p>
+                            <p><strong>Career Goal:</strong> <span>Senior QA Automation Engineer</span></p>
+                        </div>
+                        <div class="profile-tc-socials">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="card hobby-section">
-                    <h3><i class="fa fa-camera"></i> Photography</h3>
-                    <p>Outside of coding and testing, I capture stories through my lens, focusing on nature and urban landscapes.</p>
-                    <div id="hobbyGallery" class="hobby-gallery">
-                        <div class="gallery-item">
-                            <img src="gallery1.jpg" alt="Manila Riverside" data-lightbox="gallery1.jpg" data-caption="Manila Riverside — Golden hour along the Pasig River with the historic post office building.">
-                            <div class="gallery-caption">
-                                <strong>Manila Riverside</strong>
-                                <span>Golden hour along the Pasig River with the historic post office building.</span>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="gallery2.jpg" alt="Taal Volcano, Tagaytay" data-lightbox="gallery2.jpg" data-caption="Taal Volcano, Tagaytay — Scenic view of Taal Lake and Volcano Island from Starbucks Tagaytay.">
-                            <div class="gallery-caption">
-                                <strong>Taal Volcano, Tagaytay</strong>
-                                <span>Scenic view of Taal Lake and Volcano Island from Starbucks Tagaytay.</span>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://picsum.photos/seed/ocean22/400/260" alt="Coastal Horizon" data-lightbox="https://picsum.photos/seed/ocean22/900/600" data-caption="Coastal Horizon — Golden hour at a quiet beach in Batangas, Philippines.">
-                            <div class="gallery-caption">
-                                <strong>Coastal Horizon</strong>
-                                <span>Golden hour at a quiet beach in Batangas, Philippines.</span>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://picsum.photos/seed/rooftop7/400/260" alt="Rooftop View" data-lightbox="https://picsum.photos/seed/rooftop7/900/600" data-caption="Rooftop View — Urban skyline captured from a rooftop during the blue hour.">
-                            <div class="gallery-caption">
-                                <strong>Rooftop View</strong>
-                                <span>Urban skyline captured from a rooftop during the blue hour.</span>
-                            </div>
+            <!-- Photography Carousel -->
+            <div class="card hobby-section">
+                <h3><i class="fa fa-camera"></i> Photography</h3>
+                <p>Outside of coding and testing, I capture stories through my lens, focusing on nature and urban landscapes.</p>
+                <div class="gallery-carousel" id="galleryCarousel">
+                    <div class="gallery-slide active" data-index="0">
+                        <img src="gallery1.jpg" alt="Manila Riverside" data-lightbox="gallery1.jpg" data-caption="Manila Riverside — Golden hour along the Pasig River with the historic post office building.">
+                        <div class="gallery-slide-caption">
+                            <strong>Manila Riverside</strong>
+                            <span>Golden hour along the Pasig River with the historic post office building.</span>
                         </div>
                     </div>
+                    <div class="gallery-slide" data-index="1">
+                        <img src="gallery2.jpg" alt="Taal Volcano, Tagaytay" data-lightbox="gallery2.jpg" data-caption="Taal Volcano, Tagaytay — Scenic view of Taal Lake and Volcano Island from Starbucks Tagaytay.">
+                        <div class="gallery-slide-caption">
+                            <strong>Taal Volcano, Tagaytay</strong>
+                            <span>Scenic view of Taal Lake and Volcano Island from Starbucks Tagaytay.</span>
+                        </div>
+                    </div>
+                    <div class="gallery-slide" data-index="2">
+                        <img src="https://picsum.photos/seed/ocean22/400/260" alt="Coastal Horizon" data-lightbox="https://picsum.photos/seed/ocean22/900/600" data-caption="Coastal Horizon — Golden hour at a quiet beach in Batangas, Philippines.">
+                        <div class="gallery-slide-caption">
+                            <strong>Coastal Horizon</strong>
+                            <span>Golden hour at a quiet beach in Batangas, Philippines.</span>
+                        </div>
+                    </div>
+                    <div class="gallery-slide" data-index="3">
+                        <img src="https://picsum.photos/seed/rooftop7/400/260" alt="Rooftop View" data-lightbox="https://picsum.photos/seed/rooftop7/900/600" data-caption="Rooftop View — Urban skyline captured from a rooftop during the blue hour.">
+                        <div class="gallery-slide-caption">
+                            <strong>Rooftop View</strong>
+                            <span>Urban skyline captured from a rooftop during the blue hour.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button type="button" class="carousel-arrow" id="galleryPrev" aria-label="Previous photo"><i class="fa fa-chevron-left"></i></button>
+                    <div class="carousel-dots" id="galleryDots">
+                        <button type="button" class="carousel-dot active" data-slide="0" aria-label="Photo 1"></button>
+                        <button type="button" class="carousel-dot" data-slide="1" aria-label="Photo 2"></button>
+                        <button type="button" class="carousel-dot" data-slide="2" aria-label="Photo 3"></button>
+                        <button type="button" class="carousel-dot" data-slide="3" aria-label="Photo 4"></button>
+                    </div>
+                    <button type="button" class="carousel-arrow" id="galleryNext" aria-label="Next photo"><i class="fa fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>

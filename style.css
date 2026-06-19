@@ -789,46 +789,34 @@ header {
 .profile-title h3 { margin: 0; font-size: 1.4rem; color: #fff; }
 .profile-title p { margin: 0; color: var(--accent); font-weight: 600; }
 
-/* Avatar Picker */
-.avatar-picker-card {
-    padding: 0 !important;
-    overflow: hidden;
+/* Profile Card — Testimonial Layout */
+.profile-tc {
+    margin-bottom: 24px;
 }
 
-.avatar-picker {
+.profile-tc-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.avatar-picker-banner {
+.profile-tc-image {
     width: 100%;
-    height: 8rem;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(139, 92, 246, 0.15));
-}
-
-.avatar-picker-display {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
+    border-radius: 20px;
     overflow: hidden;
-    border: 4px solid var(--bg-secondary);
-    background: var(--bg-secondary);
-    margin-top: -65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
 .avatar-picker-content {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.1));
 }
 
 .avatar-picker-content.spin {
@@ -846,45 +834,25 @@ header {
     height: 100%;
     object-fit: cover;
     object-position: top;
-    border-radius: 50%;
 }
 
 .avatar-picker-content svg {
-    width: 80%;
-    height: 80%;
-}
-
-.avatar-picker-info {
-    text-align: center;
-    margin-top: 12px;
-    padding: 0 20px;
-}
-
-.avatar-picker-info h3 {
-    margin: 0;
-    font-size: 1.4rem;
-    color: #fff;
-    font-weight: 700;
-}
-
-.avatar-picker-info p {
-    margin: 4px 0 0;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
+    width: 55%;
+    height: 55%;
 }
 
 .avatar-picker-options {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin: 18px 0 20px;
-    padding: 0 20px;
+    gap: 10px;
+    padding: 14px;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .avatar-opt {
     position: relative;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--border);
@@ -910,18 +878,67 @@ header {
     border-radius: 50%;
 }
 
-.avatar-opt svg {
-    width: 32px;
-    height: 32px;
-}
+.avatar-opt svg { width: 28px; height: 28px; }
 
 .avatar-opt.active {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25), 0 0 16px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25), 0 0 12px rgba(59, 130, 246, 0.2);
 }
 
-.avatar-picker-details {
-    padding: 0 20px 20px;
+.profile-tc-card {
+    background: var(--bg-card);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+    margin-top: -28px;
+    z-index: 1;
+    position: relative;
+    width: 92%;
+}
+
+.profile-tc-card h2 {
+    margin: 0 0 4px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.profile-tc-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0 0 16px;
+}
+
+.profile-tc-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.profile-tc-socials a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s, transform 0.2s, border-color 0.3s;
+}
+
+.profile-tc-socials a:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    transform: scale(1.08);
 }
 
 .about-details p {
@@ -935,31 +952,166 @@ header {
 
 .about-details strong { color: var(--text-primary); }
 
-.hobby-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+@media (min-width: 768px) {
+    .profile-tc-layout {
+        flex-direction: row;
+        align-items: stretch;
+    }
 
-.gallery-item {
-    border-radius: 12px;
+    .profile-tc-image {
+        width: 340px;
+        min-height: 340px;
+        flex-shrink: 0;
+    }
+
+    .avatar-picker-content {
+        aspect-ratio: auto;
+        height: calc(100% - 68px);
+    }
+
+    .profile-tc-card {
+        margin-top: 0;
+        margin-left: -60px;
+        width: auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+}
+
+@media (min-width: 1260px) {
+    .profile-tc-image {
+        width: 400px;
+        min-height: 400px;
+    }
+
+    .profile-tc-card {
+        margin-left: -80px;
+        padding: 36px 32px;
+    }
+
+    .profile-tc-card h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Gallery Carousel */
+.gallery-carousel {
+    position: relative;
+    margin-top: 14px;
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: var(--shadow-card);
     background: var(--bg-card);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-item:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-card), 0 0 40px rgba(59, 130, 246, 0.1);
+.gallery-slide {
+    display: none;
+    animation: carouselFadeIn 0.4s ease;
 }
 
-.gallery-item img { width: 100%; height: 130px; object-fit: cover; display: block; cursor: zoom-in; }
+.gallery-slide.active {
+    display: block;
+}
 
-.gallery-caption { padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; }
-.gallery-caption strong { font-size: 0.85rem; color: var(--accent); }
-.gallery-caption span { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3; }
+@keyframes carouselFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 
-@media (max-width: 480px) {
-    .hobby-gallery { grid-template-columns: 1fr; }
-    .gallery-item img { height: 160px; }
+.gallery-slide img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+}
+
+.gallery-slide-caption {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.gallery-slide-caption strong {
+    font-size: 0.92rem;
+    color: var(--accent);
+}
+
+.gallery-slide-caption span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.carousel-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-arrow:hover {
+    background: var(--bg-card-hover);
+    color: #fff;
+    border-color: var(--border-hover);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.carousel-dot.active {
+    background: var(--accent);
+    transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+    .gallery-slide img {
+        height: 320px;
+    }
+}
+
+@media (min-width: 1260px) {
+    .gallery-slide img {
+        height: 380px;
+    }
 }
 
 
