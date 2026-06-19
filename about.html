@@ -55,20 +55,44 @@
         <section id="about" class="page active">
             <h2>Personal Details</h2>
             <div class="grid-layout">
-                <div class="card" id="aboutCard">
-                    <div class="profile-header">
-                        <img src="DP.jpg" alt="Cristian Esplana" class="profile-photo">
-                        <div class="profile-title">
+                <div class="card avatar-picker-card" id="aboutCard">
+                    <div class="avatar-picker">
+                        <div class="avatar-picker-banner"></div>
+                        <div class="avatar-picker-display" id="avatarDisplay">
+                            <div class="avatar-picker-content" id="avatarContent">
+                                <img src="DP.jpg" alt="Cristian Esplana" id="avatarMainImg">
+                            </div>
+                        </div>
+                        <div class="avatar-picker-info">
                             <h3>Cristian Esplana</h3>
-                            <p>2nd Year BSIT Student</p>
+                            <p>Select your avatar</p>
+                        </div>
+                        <div class="avatar-picker-options" id="avatarOptions">
+                            <button type="button" class="avatar-opt active" data-avatar="photo" title="Profile Photo">
+                                <img src="DP.jpg" alt="Photo">
+                            </button>
+                            <button type="button" class="avatar-opt" data-avatar="1" title="Avatar 1">
+                                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="av1" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFF"/></mask><g mask="url(#av1)"><rect width="36" height="36" fill="#ff005b"/><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"/><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000" fill="none" stroke-linecap="round"/><rect x="10" y="14" width="1.5" height="2" rx="1" fill="#000"/><rect x="24" y="14" width="1.5" height="2" rx="1" fill="#000"/></g></g></svg>
+                            </button>
+                            <button type="button" class="avatar-opt" data-avatar="2" title="Avatar 2">
+                                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="av2" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFF"/></mask><g mask="url(#av2)"><rect width="36" height="36" fill="#ff7d10"/><rect x="0" y="0" width="36" height="36" transform="translate(5 -1) rotate(55 18 18) scale(1.1)" fill="#0a0310" rx="6"/><g transform="translate(7 -6) rotate(-5 18 18)"><path d="M15 20c2 1 4 1 6 0" stroke="#FFF" fill="none" stroke-linecap="round"/><rect x="14" y="14" width="1.5" height="2" rx="1" fill="#FFF"/><rect x="20" y="14" width="1.5" height="2" rx="1" fill="#FFF"/></g></g></svg>
+                            </button>
+                            <button type="button" class="avatar-opt" data-avatar="3" title="Avatar 3">
+                                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="av3" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFF"/></mask><g mask="url(#av3)"><rect width="36" height="36" fill="#0a0310"/><rect x="0" y="0" width="36" height="36" transform="translate(-3 7) rotate(227 18 18) scale(1.2)" fill="#ff005b" rx="36"/><g transform="translate(-3 3.5) rotate(7 18 18)"><path d="M13,21 a1,0.75 0 0,0 10,0" fill="#FFF"/><rect x="12" y="14" width="1.5" height="2" rx="1" fill="#FFF"/><rect x="22" y="14" width="1.5" height="2" rx="1" fill="#FFF"/></g></g></svg>
+                            </button>
+                            <button type="button" class="avatar-opt" data-avatar="4" title="Avatar 4">
+                                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="av4" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFF"/></mask><g mask="url(#av4)"><rect width="36" height="36" fill="#d8fcb3"/><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#89fcb3" rx="6"/><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000" fill="none" stroke-linecap="round"/><rect x="10" y="14" width="1.5" height="2" rx="1" fill="#000"/><rect x="24" y="14" width="1.5" height="2" rx="1" fill="#000"/></g></g></svg>
+                            </button>
                         </div>
                     </div>
+                    <div class="avatar-picker-details">
                     <hr>
                     <div class="about-details">
                         <p><strong>Status:</strong> <span>Working Student</span></p>
                         <p><strong>Current Role:</strong> <span>Freelance QA Analyst</span></p>
                         <p><strong>Specialization:</strong> <span>Quality Assurance & Web Dev</span></p>
                         <p><strong>Career Goal:</strong> <span>Senior QA Automation Engineer</span></p>
+                    </div>
                     </div>
                 </div>
 

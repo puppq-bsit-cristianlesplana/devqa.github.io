@@ -309,9 +309,44 @@ class TubelightNav {
 }
 
 
+class AvatarPicker {
+    constructor() {
+        this.display = document.getElementById('avatarContent');
+        this.options = document.getElementById('avatarOptions');
+        if (!this.display || !this.options) return;
+        this._bind();
+    }
+
+    _bind() {
+        this.options.querySelectorAll('.avatar-opt').forEach(btn => {
+            btn.addEventListener('click', () => this._select(btn));
+        });
+    }
+
+    _select(btn) {
+        if (btn.classList.contains('active')) return;
+
+        this.options.querySelectorAll('.avatar-opt').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        this.display.classList.remove('spin');
+        void this.display.offsetWidth;
+        this.display.classList.add('spin');
+
+        if (btn.dataset.avatar === 'photo') {
+            this.display.innerHTML = '<img src="DP.jpg" alt="Cristian Esplana">';
+        } else {
+            const svg = btn.querySelector('svg');
+            if (svg) this.display.innerHTML = svg.outerHTML;
+        }
+    }
+}
+
+
 class PortfolioApp {
     constructor() {
         this.tubelightNav   = new TubelightNav();
+        this.avatarPicker   = new AvatarPicker();
         this.search         = new SearchManager();
         this.navModal       = new NavModal();
         this.imageModal     = new ImageModal();
