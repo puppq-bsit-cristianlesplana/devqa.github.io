@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>if(sessionStorage.getItem("portfolio_auth")!=="true")window.location.href="login.html";</script>
     <title>Projects | Cristian Esplana</title>
-    <link rel="icon" type="image/png" href="Cat.png">
+    <link rel="icon" type="image/svg+xml" href="icons/devcat.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -13,7 +13,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo"><img src="Cat.png" alt="logo" class="logo-icon">CRISTIAN</a>
+            <a href="index.html" class="logo"><img src="icons/devcat.svg" alt="DevCat" class="logo-icon"><img src="icons/devcat-label.svg" alt="DevCat" class="logo-label"></a>
             <nav class="tubelight-nav">
                 <a href="index.html" class="tubelight-link" data-page="index"><i class="fa fa-home"></i><span>Home</span></a>
                 <a href="projects.html" class="tubelight-link" data-page="projects"><i class="fa fa-code"></i><span>Projects</span></a>
@@ -53,81 +53,150 @@
 
     <main class="mobile-container">
         <section id="projects" class="page active">
-            <h2>Past Semester Projects</h2>
+            <div class="blog-section-header">
+                <span class="blog-tagline"><i class="fa fa-code"></i> Projects</span>
+                <h2>Past Semester Projects</h2>
+                <p>A collection of academic and personal projects built across multiple semesters — from desktop apps to console games.</p>
+            </div>
 
             <div class="year-group">
                 <div class="year-label"><i class="fa fa-calendar-alt"></i> 1st Year</div>
-                <div class="grid-layout">
-                    <div class="card project-card" data-project-id="polycal1">
-                        <div class="project-meta">
-                            <span class="subject-tag">Comprog 1</span>
-                            <span class="platform-tag"><i class="fa fa-desktop"></i> Desktop</span>
+                <div class="glass-grid">
+                    <div class="glass-card" data-project-id="polycal1">
+                        <div class="glass-card-img">
+                            <img src="473167842_1277725740165776_4760458389630140038_n.png" alt="POLYCAL v1">
+                            <div class="glass-card-tags">
+                                <span class="glass-tag">Comprog 1</span>
+                                <span class="glass-tag"><i class="fa fa-desktop"></i> Desktop</span>
+                            </div>
+                            <div class="glass-card-overlay">
+                                <span class="glass-card-read"><i class="fa fa-book-open"></i> View Details</span>
+                            </div>
                         </div>
-                        <h3><i class="fa fa-calendar-check"></i> POLYCAL v1</h3>
-                        <p>A student calendar desktop app for Polytechnic students to manage schedules, deadlines, and subjects — built with <strong>Python (Tkinter)</strong>.</p>
-                        <div class="tech-stack">
-                            <span class="tech">Python</span>
-                            <span class="tech">Tkinter</span>
+                        <div class="glass-card-body">
+                            <h3>POLYCAL v1</h3>
+                            <p>A student calendar desktop app for Polytechnic students to manage schedules, deadlines, and subjects — built with Python (Tkinter).</p>
                         </div>
-                        <img class="card-thumb" src="473167842_1277725740165776_4760458389630140038_n.png" alt="POLYCAL v1 Screenshot">
+                        <div class="glass-card-footer">
+                            <div class="glass-card-author">
+                                <img src="DP.jpg" alt="Cristian">
+                                <div>
+                                    <strong>Cristian Esplana</strong>
+                                    <span>1st Sem 2024</span>
+                                </div>
+                            </div>
+                            <div class="glass-card-meta"><i class="fa fa-clock"></i> Python · Tkinter</div>
+                        </div>
                     </div>
-                    <div class="card project-card" data-project-id="polycal2">
-                        <div class="project-meta">
-                            <span class="subject-tag">Comprog 2</span>
-                            <span class="platform-tag"><i class="fa fa-mobile-alt"></i> Mobile</span>
+                    <div class="glass-card" data-project-id="polycal2">
+                        <div class="glass-card-img">
+                            <img src="https://picsum.photos/seed/polycal2/700/450" alt="POLYCAL v2">
+                            <div class="glass-card-tags">
+                                <span class="glass-tag">Comprog 2</span>
+                                <span class="glass-tag"><i class="fa fa-mobile-alt"></i> Mobile</span>
+                            </div>
+                            <div class="glass-card-overlay">
+                                <span class="glass-card-read"><i class="fa fa-book-open"></i> View Details</span>
+                            </div>
                         </div>
-                        <h3><i class="fa fa-calendar-check"></i> POLYCAL v2</h3>
-                        <p>Mobile version of POLYCAL redesigned for Android using <strong>Python (Kivy)</strong>, featuring a touch-friendly UI for on-the-go scheduling.</p>
-                        <div class="tech-stack">
-                            <span class="tech">Python</span>
-                            <span class="tech">Kivy</span>
+                        <div class="glass-card-body">
+                            <h3>POLYCAL v2</h3>
+                            <p>Mobile version of POLYCAL redesigned for Android using Python (Kivy), featuring a touch-friendly UI for on-the-go scheduling.</p>
                         </div>
-                        <img class="card-thumb" src="https://picsum.photos/seed/polycal2/700/450" alt="POLYCAL v2 Screenshot">
+                        <div class="glass-card-footer">
+                            <div class="glass-card-author">
+                                <img src="DP.jpg" alt="Cristian">
+                                <div>
+                                    <strong>Cristian Esplana</strong>
+                                    <span>2nd Sem 2024</span>
+                                </div>
+                            </div>
+                            <div class="glass-card-meta"><i class="fa fa-clock"></i> Python · Kivy</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="year-group">
                 <div class="year-label"><i class="fa fa-calendar-alt"></i> 2nd Year</div>
-                <div class="grid-layout">
-                    <div class="card project-card" data-project-id="tictactoe">
-                        <div class="project-meta">
-                            <span class="subject-tag">Comprog 3</span>
-                            <span class="platform-tag"><i class="fa fa-users"></i> Group</span>
+                <div class="glass-grid">
+                    <div class="glass-card" data-project-id="tictactoe">
+                        <div class="glass-card-img">
+                            <img src="501349887_1279814190234263_7639640468511384140_n.png" alt="Tic-Tac-Toe">
+                            <div class="glass-card-tags">
+                                <span class="glass-tag">Comprog 3</span>
+                                <span class="glass-tag"><i class="fa fa-users"></i> Group</span>
+                            </div>
+                            <div class="glass-card-overlay">
+                                <span class="glass-card-read"><i class="fa fa-book-open"></i> View Details</span>
+                            </div>
                         </div>
-                        <h3><i class="fa fa-gamepad"></i> Tic-Tac-Toe</h3>
-                        <p>A console-based two-player Tic-Tac-Toe game developed as a group project, applying object-oriented programming concepts in <strong>C++</strong>.</p>
-                        <div class="tech-stack">
-                            <span class="tech">C++</span>
-                            <span class="tech">OOP</span>
+                        <div class="glass-card-body">
+                            <h3>Tic-Tac-Toe</h3>
+                            <p>A console-based two-player game developed as a group project, applying object-oriented programming concepts in C++.</p>
                         </div>
-                        <img class="card-thumb" src="https://picsum.photos/seed/tictac77/700/450" alt="Tic-Tac-Toe Screenshot">
+                        <div class="glass-card-footer">
+                            <div class="glass-card-author">
+                                <img src="DP.jpg" alt="Cristian">
+                                <div>
+                                    <strong>Cristian Esplana</strong>
+                                    <span>1st Sem 2025</span>
+                                </div>
+                            </div>
+                            <div class="glass-card-meta"><i class="fa fa-clock"></i> C++ · OOP</div>
+                        </div>
                     </div>
-                    <div class="card project-card" data-project-id="linking">
-                        <div class="project-meta">
-                            <span class="subject-tag">Data Structures & Algorithms</span>
-                            <span class="platform-tag"><i class="fa fa-users"></i> Group</span>
+                    <div class="glass-card" data-project-id="linking">
+                        <div class="glass-card-img">
+                            <img src="https://picsum.photos/seed/datalink/700/450" alt="Linking Function">
+                            <div class="glass-card-tags">
+                                <span class="glass-tag">DSA</span>
+                                <span class="glass-tag"><i class="fa fa-users"></i> Group</span>
+                            </div>
+                            <div class="glass-card-overlay">
+                                <span class="glass-card-read"><i class="fa fa-book-open"></i> View Details</span>
+                            </div>
                         </div>
-                        <h3><i class="fa fa-project-diagram"></i> Linking Function</h3>
-                        <p>A group project demonstrating linked data structures and function chaining using <strong>Python</strong>, applying DSA concepts in a practical system.</p>
-                        <div class="tech-stack">
-                            <span class="tech">Python</span>
-                            <span class="tech">DSA</span>
+                        <div class="glass-card-body">
+                            <h3>Linking Function</h3>
+                            <p>A group project demonstrating linked data structures and function chaining using Python, applying DSA concepts in a practical system.</p>
                         </div>
-                        <img class="card-thumb" src="https://picsum.photos/seed/datalink/700/450" alt="Linking Function Screenshot">
+                        <div class="glass-card-footer">
+                            <div class="glass-card-author">
+                                <img src="DP.jpg" alt="Cristian">
+                                <div>
+                                    <strong>Cristian Esplana</strong>
+                                    <span>1st Sem 2025</span>
+                                </div>
+                            </div>
+                            <div class="glass-card-meta"><i class="fa fa-clock"></i> Python · DSA</div>
+                        </div>
                     </div>
-                    <div class="card project-card" data-project-id="bookinventory">
-                        <div class="project-meta">
-                            <span class="subject-tag">Free Elective</span>
-                            <span class="platform-tag"><i class="fa fa-user"></i> Solo</span>
+                    <div class="glass-card" data-project-id="bookinventory">
+                        <div class="glass-card-img">
+                            <img src="LOGO.png" alt="Book Inventory">
+                            <div class="glass-card-tags">
+                                <span class="glass-tag">Free Elective</span>
+                                <span class="glass-tag"><i class="fa fa-user"></i> Solo</span>
+                            </div>
+                            <div class="glass-card-overlay">
+                                <span class="glass-card-read"><i class="fa fa-book-open"></i> View Details</span>
+                            </div>
                         </div>
-                        <h3><i class="fa fa-book"></i> Book Inventory CRUD</h3>
-                        <p>A solo CRUD application for managing a book inventory system — built with <strong>Java</strong>, covering create, read, update, and delete operations.</p>
-                        <div class="tech-stack">
-                            <span class="tech">Java</span>
-                            <span class="tech">CRUD</span>
+                        <div class="glass-card-body">
+                            <h3>Book Inventory CRUD</h3>
+                            <p>A solo CRUD application for managing a book inventory system — built with Java, covering create, read, update, and delete operations.</p>
                         </div>
-                        <img class="card-thumb" src="https://picsum.photos/seed/bookstore/700/450" alt="Book Inventory Screenshot">
+                        <div class="glass-card-footer">
+                            <div class="glass-card-author">
+                                <img src="DP.jpg" alt="Cristian">
+                                <div>
+                                    <strong>Cristian Esplana</strong>
+                                    <span>2nd Sem 2025</span>
+                                </div>
+                            </div>
+                            <div class="glass-card-meta"><i class="fa fa-clock"></i> Java · CRUD</div>
+                        </div>
                     </div>
                 </div>
             </div>

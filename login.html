@@ -4,58 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Cristian Esplana</title>
-    <link rel="icon" type="image/png" href="Cat.png">
+    <link rel="icon" type="image/svg+xml" href="icons/devcat.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <h1 class="logo"><img src="Cat.png" alt="logo" class="logo-icon">CRISTIAN</h1>
-            <div class="header-right"></div>
-        </div>
-    </header>
-
-    <main class="mobile-container">
-        <section class="page active">
-            <div class="hero-header" style="text-align:center;">
-                <h2>Welcome</h2>
-                <p>Enter the password to access the portfolio.</p>
-            </div>
-            <div class="login-box">
-                <div class="login-icon">
-                    <i class="fa fa-lock"></i>
+    <div class="auth-split">
+        <!-- Left: Form -->
+        <div class="auth-form-side">
+            <div class="auth-form-inner">
+                <div class="auth-logo">
+                    <img src="icons/devcat.svg" alt="DevCat" class="logo-icon">
+                    <img src="icons/devcat-label.svg" alt="DevCat" class="logo-label">
+                </div>
+                <div class="auth-form-header">
+                    <h1>Sign in to your portfolio</h1>
+                    <p>Enter the password below to continue</p>
                 </div>
                 <form id="loginForm" autocomplete="off">
-                    <div class="form-group">
-                        <label for="loginPassword"><i class="fa fa-key"></i> Password</label>
-                        <div class="password-wrapper">
+                    <div class="auth-field">
+                        <label for="loginPassword">Password</label>
+                        <div class="auth-input-wrap">
                             <input type="password" id="loginPassword" placeholder="Enter password..." required autofocus>
-                            <button type="button" id="togglePassword" class="toggle-password" title="Show password">
+                            <button type="button" id="togglePassword" class="auth-eye" title="Show password">
                                 <i class="fa fa-eye"></i>
                             </button>
                         </div>
                     </div>
                     <p id="loginError" class="login-error"></p>
-                    <button type="submit" class="login-btn">
+                    <button type="submit" class="auth-submit">
                         <i class="fa fa-sign-in-alt"></i> Enter Portfolio
                     </button>
                 </form>
+                <div class="auth-divider">
+                    <span>Portfolio by Cristian Esplana</span>
+                </div>
+                <div class="auth-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
-        <p>&copy; 2026 Cristian Esplana. All rights reserved.</p>
-    </footer>
+
+        <!-- Right: Image + Quote -->
+        <div class="auth-image-side">
+            <img src="gallery2.jpg" alt="Taal Volcano, Tagaytay" class="auth-bg-img">
+            <div class="auth-image-fade"></div>
+            <div class="auth-quote">
+                <p>"<span id="typewriterText"></span><span class="auth-cursor">|</span>"</p>
+                <cite>— Cristian Esplana</cite>
+            </div>
+        </div>
+    </div>
 
     <script>
+        class Typewriter {
+            constructor(el, texts, speed = 70, deleteSpeed = 40, delay = 2000) {
+                this.el = el;
+                this.texts = texts;
+                this.speed = speed;
+                this.deleteSpeed = deleteSpeed;
+                this.delay = delay;
+                this.textIndex = 0;
+                this.charIndex = 0;
+                this.isDeleting = false;
+                this._tick();
+            }
+
+            _tick() {
+                const current = this.texts[this.textIndex];
+                if (!this.isDeleting) {
+                    this.el.textContent = current.slice(0, ++this.charIndex);
+                    if (this.charIndex === current.length) {
+                        setTimeout(() => { this.isDeleting = true; this._tick(); }, this.delay);
+                        return;
+                    }
+                } else {
+                    this.el.textContent = current.slice(0, --this.charIndex);
+                    if (this.charIndex === 0) {
+                        this.isDeleting = false;
+                        this.textIndex = (this.textIndex + 1) % this.texts.length;
+                    }
+                }
+                setTimeout(() => this._tick(), this.isDeleting ? this.deleteSpeed : this.speed);
+            }
+        }
+
         class LoginForm {
             constructor(password) {
                 this.password  = password;
@@ -98,6 +135,14 @@
                     return;
                 }
                 this.form = new LoginForm('devqa2026');
+                const twEl = document.getElementById('typewriterText');
+                if (twEl) {
+                    new Typewriter(twEl, [
+                        'Welcome back! The journey continues.',
+                        'Building quality software, one test at a time.',
+                        'Innovation starts with a single step.'
+                    ]);
+                }
             }
         }
 

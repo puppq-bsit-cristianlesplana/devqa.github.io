@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>if(sessionStorage.getItem("portfolio_auth")!=="true")window.location.href="login.html";</script>
     <title>Cristian Esplana | Portfolio</title>
-    <link rel="icon" type="image/png" href="Cat.png">
+    <link rel="icon" type="image/svg+xml" href="icons/devcat.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -13,7 +13,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo"><img src="Cat.png" alt="logo" class="logo-icon">CRISTIAN</a>
+            <a href="index.html" class="logo"><img src="icons/devcat.svg" alt="DevCat" class="logo-icon"><img src="icons/devcat-label.svg" alt="DevCat" class="logo-label"></a>
             <nav class="tubelight-nav">
                 <a href="index.html" class="tubelight-link" data-page="index"><i class="fa fa-home"></i><span>Home</span></a>
                 <a href="projects.html" class="tubelight-link" data-page="projects"><i class="fa fa-code"></i><span>Projects</span></a>
@@ -53,86 +53,202 @@
 
     <main class="mobile-container">
         <section id="home" class="page active">
-            <div class="hero-header">
-                <h1>Welcome, I'm Cristian Esplana, your next innovation partner.</h1>
-                <p>College Student, Freelance QA Analyst &amp; Aspiring Web Developer — building quality software one test at a time.</p>
-            </div>
-            <div class="scroll-preview">
-
-                <!-- Projects Preview -->
-                <div class="preview-item" data-section="projects">
-                    <h4><i class="fa fa-code"></i> Projects</h4>
-                    <p class="preview-sub">Click to preview</p>
-                    <div class="home-preview-projects">
-                        <div class="hp-project hp-project-full">
-                            <div class="hp-project-top">
-                                <span class="subject-tag">Comprog 1 &amp; 2</span>
-                                <span class="platform-tag"><i class="fa fa-calendar-check"></i></span>
-                            </div>
-                            <strong>POLYCAL</strong>
-                            <img class="hp-project-img" src="473167842_1277725740165776_4760458389630140038_n.png" alt="POLYCAL Mockup">
-                            <p>Student calendar app — Desktop (Tkinter) &amp; Mobile (Kivy) in Python.</p>
-                            <p>We Project Overview: Develop an application system designed for students to monitor upcoming events at PUP Parañaque. Beyond event tracking, the system will feature a Personalized Calendar where users can add private notes to specific dates. A key feature includes a Collaborative Invitation tool, allowing students to invite peers to view specific notes, facilitating shared study schedules or group reminders.</p>
-                            <div class="tech-stack">
-                                <span class="tech">Python</span>
-                                <span class="tech">Tkinter</span>
-                                <span class="tech">Kivy</span>
-                            </div>
-                        </div>
-                        <div class="hp-project">
-                            <div class="hp-project-top">
-                                <span class="subject-tag">Comprog 3</span>
-                                <span class="platform-tag"><i class="fa fa-users"></i></span>
-                            </div>
-                            <strong>Tic-Tac-Toe</strong>
-                            <img class="hp-project-img" src="473167842_1277725740165776_4760458389630140038_n.png" alt="Tic-Tac-Toe Mockup">
-                            <p>Console two-player game built with C++ as a group project.</p>
-                            <div class="tech-stack">
-                                <span class="tech">C++</span>
-                                <span class="tech">OOP</span>
-                            </div>
-                        </div>
+            <div class="hero-header hero-cloud">
+                <h1><span class="hero-muted">College Student &amp; Freelance QA.</span><br>Your next innovation partner.</h1>
+                <div class="hero-divider"></div>
+                <div class="logo-cloud">
+                    <div class="logo-cloud-track">
+                        <div class="logo-chip"><img src="icons/python.svg" alt="Python"><span>Python</span></div>
+                        <div class="logo-chip"><img src="icons/java.svg" alt="Java"><span>Java</span></div>
+                        <div class="logo-chip"><img src="icons/cpp.svg" alt="C++"><span>C++</span></div>
+                        <div class="logo-chip"><img src="icons/html5.svg" alt="HTML5"><span>HTML5</span></div>
+                        <div class="logo-chip"><img src="icons/css.svg" alt="CSS3"><span>CSS3</span></div>
+                        <div class="logo-chip"><img src="icons/javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+                        <div class="logo-chip"><img src="icons/sql.svg" alt="SQL"><span>SQL</span></div>
+                        <div class="logo-chip"><img src="icons/github.svg" alt="GitHub"><span>GitHub</span></div>
+                        <div class="logo-chip"><img src="icons/vscode.svg" alt="VS Code"><span>VS Code</span></div>
+                        <div class="logo-chip"><img src="icons/tailwind.svg" alt="Tailwind"><span>Tailwind</span></div>
+                        <div class="logo-chip"><img src="icons/vue.svg" alt="Vue.js"><span>Vue.js</span></div>
+                        <div class="logo-chip"><img src="icons/claude.svg" alt="Claude"><span>Claude</span></div>
+                        <div class="logo-chip"><img src="icons/gemini.svg" alt="Gemini"><span>Gemini</span></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="logo-chip"><img src="icons/python.svg" alt="Python"><span>Python</span></div>
+                        <div class="logo-chip"><img src="icons/java.svg" alt="Java"><span>Java</span></div>
+                        <div class="logo-chip"><img src="icons/cpp.svg" alt="C++"><span>C++</span></div>
+                        <div class="logo-chip"><img src="icons/html5.svg" alt="HTML5"><span>HTML5</span></div>
+                        <div class="logo-chip"><img src="icons/css.svg" alt="CSS3"><span>CSS3</span></div>
+                        <div class="logo-chip"><img src="icons/javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+                        <div class="logo-chip"><img src="icons/sql.svg" alt="SQL"><span>SQL</span></div>
+                        <div class="logo-chip"><img src="icons/github.svg" alt="GitHub"><span>GitHub</span></div>
+                        <div class="logo-chip"><img src="icons/vscode.svg" alt="VS Code"><span>VS Code</span></div>
+                        <div class="logo-chip"><img src="icons/tailwind.svg" alt="Tailwind"><span>Tailwind</span></div>
+                        <div class="logo-chip"><img src="icons/vue.svg" alt="Vue.js"><span>Vue.js</span></div>
+                        <div class="logo-chip"><img src="icons/claude.svg" alt="Claude"><span>Claude</span></div>
+                        <div class="logo-chip"><img src="icons/gemini.svg" alt="Gemini"><span>Gemini</span></div>
                     </div>
                 </div>
+                <div class="hero-divider"></div>
+            </div>
+            <div class="home-sections">
 
-                <!-- About Me Preview -->
-                <div class="preview-item" data-section="about">
-                    <h4><i class="fa fa-user"></i> About Me</h4>
-                    <p class="preview-sub">Click to preview</p>
-                    <div class="home-preview-about">
-                        <div class="hp-about-info">
-                            <div class="hp-profile-row">
-                                <img src="DP.jpg" alt="Cristian Esplana" class="hp-avatar-img">
-                                <div>
-                                    <strong>Cristian Esplana</strong>
-                                    <span>2nd Year BSIT Student</span>
+                <!-- Projects — Blog Card Grid -->
+                <div class="blog-section">
+                    <div class="blog-section-header">
+                        <span class="blog-tagline"><i class="fa fa-code"></i> Projects</span>
+                        <h2>Featured Work</h2>
+                        <p>A collection of academic and personal projects built across multiple semesters — from desktop apps to console games.</p>
+                        <a href="projects.html" class="blog-view-all">View all projects <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                    <div class="glass-grid">
+                        <a href="projects.html" class="glass-card">
+                            <div class="glass-card-img">
+                                <img src="473167842_1277725740165776_4760458389630140038_n.png" alt="POLYCAL">
+                                <div class="glass-card-tags">
+                                    <span class="glass-tag">Comprog 1 &amp; 2</span>
+                                    <span class="glass-tag"><i class="fa fa-desktop"></i> Desktop</span>
+                                </div>
+                                <div class="glass-card-overlay">
+                                    <span class="glass-card-read"><i class="fa fa-book-open"></i> View Details</span>
                                 </div>
                             </div>
-                            <div class="hp-detail-row"><i class="fa fa-briefcase"></i> Freelance QA Analyst</div>
-                            <div class="hp-detail-row"><i class="fa fa-bullseye"></i> Senior QA Automation Engineer</div>
+                            <div class="glass-card-body">
+                                <h3>POLYCAL</h3>
+                                <p>Student calendar app for PUP Parañaque — manage schedules, deadlines, and collaborate with peers. Desktop &amp; Mobile.</p>
+                            </div>
+                            <div class="glass-card-footer">
+                                <div class="glass-card-author">
+                                    <img src="DP.jpg" alt="Cristian">
+                                    <div><strong>Cristian Esplana</strong><span>1st Sem 2024</span></div>
+                                </div>
+                                <div class="glass-card-meta"><i class="fa fa-clock"></i> Python · Tkinter</div>
+                            </div>
+                        </a>
+                        <a href="projects.html" class="glass-card">
+                            <div class="glass-card-img">
+                                <img src="501349887_1279814190234263_7639640468511384140_n.png" alt="Tic-Tac-Toe">
+                                <div class="glass-card-tags">
+                                    <span class="glass-tag">Comprog 3</span>
+                                    <span class="glass-tag"><i class="fa fa-users"></i> Group</span>
+                                </div>
+                                <div class="glass-card-overlay">
+                                    <span class="glass-card-read"><i class="fa fa-book-open"></i> View Details</span>
+                                </div>
+                            </div>
+                            <div class="glass-card-body">
+                                <h3>Tic-Tac-Toe</h3>
+                                <p>Console-based two-player game applying object-oriented programming concepts as a collaborative group project.</p>
+                            </div>
+                            <div class="glass-card-footer">
+                                <div class="glass-card-author">
+                                    <img src="DP.jpg" alt="Cristian">
+                                    <div><strong>Cristian Esplana</strong><span>1st Sem 2025</span></div>
+                                </div>
+                                <div class="glass-card-meta"><i class="fa fa-clock"></i> C++ · OOP</div>
+                            </div>
+                        </a>
+                        <a href="projects.html" class="glass-card">
+                            <div class="glass-card-img">
+                                <img src="LOGO.png" alt="Book Inventory">
+                                <div class="glass-card-tags">
+                                    <span class="glass-tag">Free Elective</span>
+                                    <span class="glass-tag"><i class="fa fa-user"></i> Solo</span>
+                                </div>
+                                <div class="glass-card-overlay">
+                                    <span class="glass-card-read"><i class="fa fa-book-open"></i> View Details</span>
+                                </div>
+                            </div>
+                            <div class="glass-card-body">
+                                <h3>Book Inventory CRUD</h3>
+                                <p>Solo CRUD application for managing a book inventory system — covering create, read, update, and delete operations.</p>
+                            </div>
+                            <div class="glass-card-footer">
+                                <div class="glass-card-author">
+                                    <img src="DP.jpg" alt="Cristian">
+                                    <div><strong>Cristian Esplana</strong><span>2nd Sem 2025</span></div>
+                                </div>
+                                <div class="glass-card-meta"><i class="fa fa-clock"></i> Java · CRUD</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- About Me -->
+                <div class="home-tc-section">
+                    <div class="home-tc-layout">
+                        <div class="home-tc-image">
+                            <img src="DP.jpg" alt="Cristian Esplana">
                         </div>
-                        <div class="hp-about-photos">
-                            <img src="gallery1.jpg" alt="Manila Riverside">
-                            <img src="gallery2.jpg" alt="Taal Volcano, Tagaytay">
+                        <div class="home-tc-card">
+                            <span class="home-tc-label"><i class="fa fa-user"></i> About Me</span>
+                            <h2>Cristian Esplana</h2>
+                            <p class="home-tc-subtitle">2nd Year BSIT Student</p>
+                            <p class="home-tc-desc">Working Student &amp; Freelance QA Analyst specializing in Quality Assurance and Web Development. Aspiring to become a Senior QA Automation Engineer.</p>
+                            <div class="profile-tc-socials">
+                                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                            <a href="about.html" class="home-tc-link"><i class="fa fa-arrow-right"></i> More About Me</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Preview -->
-                <div class="preview-item" data-section="contact">
-                    <h4><i class="fa fa-envelope"></i> Contact</h4>
-                    <p class="preview-sub">Click to preview</p>
-                    <div class="home-preview-contact">
-                        <div class="hp-contact-info">
-                            <div class="hp-detail-row"><i class="fa fa-phone"></i> +63 900 000 0000</div>
-                            <div class="hp-detail-row"><i class="fa fa-envelope"></i> cristian.e@email.com</div>
-                            <div class="hp-detail-row"><i class="fa fa-map-marker-alt"></i> Manila, Philippines</div>
+                <!-- Contact — Feature Section -->
+                <div class="feature-section">
+                    <div class="feature-layout">
+                        <!-- Left: Scrolling Photo Card -->
+                        <div class="feature-scroll-card">
+                            <div class="feature-scroll-inner">
+                                <div class="feature-scroll-track feature-scroll-photos">
+                                    <div class="feature-photo">
+                                        <img src="gallery1.jpg" alt="Manila Riverside">
+                                        <div class="feature-photo-caption">Manila Riverside</div>
+                                    </div>
+                                    <div class="feature-photo">
+                                        <img src="gallery2.jpg" alt="Taal Volcano, Tagaytay">
+                                        <div class="feature-photo-caption">Taal Volcano, Tagaytay</div>
+                                    </div>
+                                    <div class="feature-photo">
+                                        <img src="https://picsum.photos/seed/ocean22/400/260" alt="Coastal Horizon">
+                                        <div class="feature-photo-caption">Coastal Horizon</div>
+                                    </div>
+                                    <div class="feature-photo">
+                                        <img src="https://picsum.photos/seed/rooftop7/400/260" alt="Rooftop View">
+                                        <div class="feature-photo-caption">Rooftop View</div>
+                                    </div>
+                                    <!-- Duplicated for seamless loop -->
+                                    <div class="feature-photo">
+                                        <img src="gallery1.jpg" alt="Manila Riverside">
+                                        <div class="feature-photo-caption">Manila Riverside</div>
+                                    </div>
+                                    <div class="feature-photo">
+                                        <img src="gallery2.jpg" alt="Taal Volcano, Tagaytay">
+                                        <div class="feature-photo-caption">Taal Volcano, Tagaytay</div>
+                                    </div>
+                                    <div class="feature-photo">
+                                        <img src="https://picsum.photos/seed/ocean22/400/260" alt="Coastal Horizon">
+                                        <div class="feature-photo-caption">Coastal Horizon</div>
+                                    </div>
+                                    <div class="feature-photo">
+                                        <img src="https://picsum.photos/seed/rooftop7/400/260" alt="Rooftop View">
+                                        <div class="feature-photo-caption">Rooftop View</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature-scroll-fade-top"></div>
+                            <div class="feature-scroll-fade-bottom"></div>
                         </div>
-                        <form class="hp-form" onsubmit="event.preventDefault(); location.href='contact.html';">
-                            <input type="email" placeholder="Your email..." disabled>
-                            <textarea rows="2" placeholder="Your message..." disabled></textarea>
-                            <button type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
-                        </form>
+
+                        <!-- Right: Content -->
+                        <div class="feature-content">
+                            <span class="blog-tagline"><i class="fa fa-envelope"></i> Contact</span>
+                            <h2>Get in Touch</h2>
+                            <form class="feature-form" onsubmit="event.preventDefault(); location.href='contact.html';">
+                                <input type="email" placeholder="Your email address..." required>
+                                <textarea rows="3" placeholder="Your message..." required></textarea>
+                                <button type="submit" class="send-btn"><span>Send Message</span> <i class="fa fa-paper-plane"></i></button>
+                            </form>
+                        </div>
                     </div>
                 </div>
 

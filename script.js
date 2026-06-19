@@ -343,18 +343,18 @@ class AvatarPicker {
 }
 
 
-class GalleryCarousel {
-    constructor() {
-        this.carousel = document.getElementById('galleryCarousel');
-        this.dotsContainer = document.getElementById('galleryDots');
-        this.prevBtn = document.getElementById('galleryPrev');
-        this.nextBtn = document.getElementById('galleryNext');
-        if (!this.carousel) return;
+class Carousel {
+    constructor(containerId, slideSelector, dotsId, prevId, nextId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
 
-        this.slides = this.carousel.querySelectorAll('.gallery-slide');
-        this.dots = this.dotsContainer?.querySelectorAll('.carousel-dot');
+        this.slides = container.querySelectorAll(slideSelector);
+        this.dots = document.getElementById(dotsId)?.querySelectorAll('.carousel-dot');
+        this.prevBtn = document.getElementById(prevId);
+        this.nextBtn = document.getElementById(nextId);
         this.current = 0;
         this.total = this.slides.length;
+        if (this.total === 0) return;
 
         this._bind();
     }
@@ -381,7 +381,6 @@ class PortfolioApp {
     constructor() {
         this.tubelightNav     = new TubelightNav();
         this.avatarPicker     = new AvatarPicker();
-        this.galleryCarousel  = new GalleryCarousel();
         this.search           = new SearchManager();
         this.navModal       = new NavModal();
         this.imageModal     = new ImageModal();
