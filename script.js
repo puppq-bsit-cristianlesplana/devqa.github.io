@@ -12,7 +12,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-desktop',
             desc: 'A student calendar desktop app for Polytechnic students to manage schedules, deadlines, and subjects — built with <strong>Python (Tkinter)</strong>.',
             tech: ['Python', 'Tkinter'],
-            img: 'https://picsum.photos/seed/polycal1/700/450',
+            img: '473167842_1277725740165776_4760458389630140038_n.png',
         },
         polycal2: {
             title: 'POLYCAL v2',
@@ -22,7 +22,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-mobile-alt',
             desc: 'Mobile version of POLYCAL redesigned for Android using <strong>Python (Kivy)</strong>, featuring a touch-friendly UI for on-the-go scheduling.',
             tech: ['Python', 'Kivy'],
-            img: 'https://picsum.photos/seed/polycal2/700/450',
+            img: 'polycalmobile.png',
         },
         tictactoe: {
             title: 'Tic-Tac-Toe',
@@ -32,7 +32,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-users',
             desc: 'A console-based two-player Tic-Tac-Toe game developed as a group project, applying object-oriented programming concepts in <strong>C++</strong>.',
             tech: ['C++', 'OOP'],
-            img: 'https://picsum.photos/seed/tictac77/700/450',
+            img: 'tictactoe.png',
         },
         linking: {
             title: 'Linking Function',
@@ -42,7 +42,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-users',
             desc: 'A group project demonstrating linked data structures and function chaining using <strong>Python</strong>, applying DSA concepts in a practical system.',
             tech: ['Python', 'DSA'],
-            img: 'https://picsum.photos/seed/datalink/700/450',
+            img: 'linking.png',
         },
         bookinventory: {
             title: 'Book Inventory CRUD',
@@ -52,7 +52,7 @@ const PORTFOLIO_DATA = {
             platformIcon: 'fa-user',
             desc: 'A solo CRUD application for managing a book inventory system — built with <strong>Java</strong>, covering create, read, update, and delete operations.',
             tech: ['Java', 'CRUD'],
-            img: 'https://picsum.photos/seed/bookstore/700/450',
+            img: 'bookcrud.png',
         },
     },
     achievements: {
