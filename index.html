@@ -24,6 +24,7 @@
                 <div class="search-box">
                     <input type="text" id="siteSearch" placeholder="Search...">
                 </div>
+                <div class="header-clock" id="headerClock"></div>
                 <a href="#" class="desktop-signout" data-logout title="Sign Out"><i class="fa fa-sign-out-alt"></i></a>
                 <button id="menuBtn" class="menu-trigger">MENU ☰</button>
             </div>
@@ -242,7 +243,7 @@
                         <!-- Right: Content -->
                         <div class="feature-content">
                             <span class="blog-tagline"><i class="fa fa-envelope"></i> Contact</span>
-                            <h2>Get in Touch</h2>
+                            <h2>Get in Touch <span class="feature-muted">— I'm always open to new opportunities, collaborations, and conversations.</span></h2>
                             <form class="feature-form" onsubmit="event.preventDefault(); location.href='contact.html';">
                                 <input type="email" placeholder="Your email address..." required>
                                 <textarea rows="3" placeholder="Your message..." required></textarea>
@@ -285,6 +286,24 @@
             <button class="img-modal-close">&times;</button>
             <img id="imgModalSrc" src="" alt="">
             <p class="img-modal-caption" id="imgModalCaption"></p>
+        </div>
+    </div>
+
+    <!-- Clock Modal -->
+    <div id="clockModal" class="clock-modal">
+        <div class="clock-modal-overlay"></div>
+        <div class="clock-modal-box">
+            <button class="clock-modal-close">&times;</button>
+            <div class="clock-modal-header">
+                <div class="clock-modal-time"></div>
+                <div class="clock-modal-date"></div>
+            </div>
+            <div class="cal-nav">
+                <button type="button" class="cal-prev" title="Previous month"><i class="fa fa-chevron-left"></i></button>
+                <span class="cal-month-label"></span>
+                <button type="button" class="cal-next" title="Next month"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <div class="cal-grid"></div>
         </div>
     </div>
 

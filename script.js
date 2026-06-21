@@ -389,7 +389,55 @@ class PortfolioApp {
         this.sectionPreview = new SectionPreviewModal();
 
         this._bindLogout();
+        this._startClock();
         this._autoOpen();
+    }
+
+    _startClock() {
+        const el = document.getElementById('headerClock');
+        const modal = document.getElementById('clockModal');
+        if (!el) return;
+
+        const update = () => {
+            const now = new Date();
+            const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            el.innerHTML = `<i class="fa fa-clock"></i> <span class="clock-time">${time}</span>`;
+            if (modal?.classList.contains('show')) this._renderCalendar(now);
+        };
+        update();
+        setInterval(update, 1000);
+
+        if (!modal) return;
+        this._calendarDate = new Date();
+        el.addEventListener('click', () => { this._calendarDate = new Date(); this._renderCalendar(new Date()); modal.classList.add('show'); });
+        modal.querySelector('.clock-modal-overlay').addEventListener('click', () => modal.classList.remove('show'));
+        modal.querySelector('.clock-modal-close').addEventListener('click', () => modal.classList.remove('show'));
+        modal.querySelector('.cal-prev').addEventListener('click', () => { this._calendarDate.setMonth(this._calendarDate.getMonth() - 1); this._renderCalendar(new Date()); });
+        modal.querySelector('.cal-next').addEventListener('click', () => { this._calendarDate.setMonth(this._calendarDate.getMonth() + 1); this._renderCalendar(new Date()); });
+    }
+
+    _renderCalendar(now) {
+        const modal = document.getElementById('clockModal');
+        if (!modal) return;
+        const cd = this._calendarDate;
+        const year = cd.getFullYear(), month = cd.getMonth();
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const monthName = cd.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+        modal.querySelector('.cal-month-label').textContent = monthName;
+        modal.querySelector('.clock-modal-time').textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        modal.querySelector('.clock-modal-date').textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+
+        const grid = modal.querySelector('.cal-grid');
+        let html = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(d => `<span class="cal-day-name">${d}</span>`).join('');
+        for (let i = 0; i < firstDay; i++) html += '<span></span>';
+        const isCurrentMonth = now.getMonth() === month && now.getFullYear() === year;
+        for (let d = 1; d <= daysInMonth; d++) {
+            const isToday = isCurrentMonth && d === now.getDate();
+            html += `<span class="cal-day${isToday ? ' cal-today' : ''}">${d}</span>`;
+        }
+        grid.innerHTML = html;
     }
 
     _autoOpen() {
